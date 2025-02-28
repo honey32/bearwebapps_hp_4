@@ -1,0 +1,25 @@
+{
+  "name": "bearwebapps_hp_3-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "build:web": "turbo web#build",
+    "start:web": "turbo wen#start",
+    "check-types": "turbo check-types",
+    "lint": "turbo lint check-format:root",
+    "check-format": "turbo check-format:root",
+    "check-format:root": "prettier . --check",
+    "format": "turbo format:root",
+    "format:root": "prettier . --write"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.4.0",
+    "typescript": "5.5.4"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.5.2"
+}

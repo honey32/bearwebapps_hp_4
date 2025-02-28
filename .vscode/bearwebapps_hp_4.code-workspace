@@ -1,0 +1,52 @@
+{
+  "folders": [
+    {
+      "name": "monorepo",
+      "path": "..",
+    },
+    {
+      "name": "web",
+      "path": "../apps/web",
+    },
+    {
+      "name": "@repo/eslint-config",
+      "path": "../packages/eslint-config",
+    },
+    {
+      "name": "@repo/style",
+      "path": "../packages/style",
+    },
+    {
+      "name": "@repo/typescript-config",
+      "path": "../packages/typescript-config",
+    },
+    {
+      "name": "@repo/ui",
+      "path": "../packages/ui",
+    },
+  ],
+  "settings": {
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "biome.enabled": false,
+    "editor.formatOnSave": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+  },
+}

@@ -1,0 +1,12 @@
+.wrapper {
+  height: min(240px, 40vw);
+
+  overflow: hidden;
+  position: relative;
+  opacity: 0.5;
+}
+
+.nextImage {
+  object-fit: cover;
+  object-position: 0 calc(50% - 10px);
+}

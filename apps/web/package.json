@@ -1,0 +1,45 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/style": "*",
+    "@repo/ui": "*",
+    "@types/node": "18.15.0",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@vcarl/remark-headings": "^0.1.0",
+    "clsx": "^1.2.1",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "15.2.0",
+    "jotai": "^2.0.4",
+    "next": "15.2.0",
+    "next-query-utils": "^1.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "rehype-prism-plus": "^2.0.0",
+    "rehype-raw": "^7.0.0",
+    "rehype-react": "^8.0.0",
+    "remark-directive": "^3.0.0",
+    "remark-heading-id": "^1.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "remark-stringify": "^11.0.0",
+    "sass": "1.59.2",
+    "server-only": "^0.0.1",
+    "tabler-icons-react": "^1.56.0",
+    "typescript": "^5.7.2",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/remark-heading-id": "^1.0.0"
+  }
+}

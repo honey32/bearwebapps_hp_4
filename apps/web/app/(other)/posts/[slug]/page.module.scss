@@ -1,0 +1,190 @@
+.main {
+  background-color: var(--color-bg);
+
+  // シート内側左右の余白
+  --margin-h: 16px;
+
+  @media screen and (min-width: 960px) {
+    margin-inline: 16px;
+    margin-block-start: 32px;
+
+    // 角丸・端の画像も合わせて切り抜き
+    border-radius: 8px;
+    overflow: hidden;
+
+    --margin-h: 32px;
+  }
+}
+
+.nav {
+  padding: 16px;
+  padding-block-start: 32px;
+}
+
+.colorModeSwitch {
+  margin-block: 2rem;
+  display: grid;
+  align-items: center;
+
+  @media screen and (min-width: 960px) {
+    display: none;
+  }
+}
+
+.content {
+  p {
+    word-break: auto-phrase;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    word-break: auto-phrase;
+    text-wrap: pretty;
+  }
+
+  p,
+  ul,
+  ol,
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-block: 1rem;
+    margin-inline: var(--margin-h);
+  }
+
+  strong {
+    color: var(--color-text-semi-accent);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-feature-settings: "palt", "kern";
+    letter-spacing: 0.1rem;
+    line-height: 1.2;
+
+    color: var(--color-text-accent);
+  }
+
+  h2 {
+    margin-block-start: 3rem;
+    margin-block-end: 1rem;
+    margin-inline: 0;
+
+    padding-block-start: 0.9rem;
+    padding-block-end: 1rem;
+    padding-inline: 16px;
+
+    border-inline-start: 8px solid var(--color-text-accent-adornment);
+
+    font-size: 1.5rem;
+    line-height: 1.2;
+
+    @media screen and (min-width: 960px) {
+      padding-inline: calc(var(--margin-h) - 8px);
+    }
+  }
+
+  h3 {
+    margin-block-start: 2rem;
+    line-height: 1.5;
+  }
+
+  ul,
+  ol {
+    margin-inline-start: calc(16px + 2rem);
+
+    ul,
+    ol {
+      margin-block: 0;
+      margin-inline-start: 1rem;
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    line-height: 1.8;
+    font-feature-settings: "pwid";
+  }
+
+  hr {
+    margin: 2rem 64px;
+    border: none;
+    height: 1px;
+    background-color: var(--color-border);
+  }
+
+  p code {
+    background-color: var(--color-bg-card);
+    padding: 4px 8px 2px;
+    margin-inline: 4px;
+    border-radius: 4px;
+
+    background-color: oklch(from cyan 0.2 0.2 h);
+  }
+
+  pre:has(code) {
+    padding: 16px 16px;
+    overflow-x: auto;
+    max-width: 100%;
+
+    line-height: 1.5;
+    color: oklch(from white 0.8 c h);
+    background-color: var(--color-bg-codeblock);
+
+    @media (prefers-color-scheme: dark) {
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  blockquote {
+    margin-block: 1.5rem;
+    padding: 0 8px;
+
+    font-size: 0.9rem;
+
+    // 相殺回避
+    border-block: 1px solid transparent;
+
+    color: var(--color-accent2-fore);
+    border-inline-start: 8px solid var(--color-accent2);
+    background-color: var(--color-accent2-weak);
+
+    @media screen and (min-width: 960px) {
+      margin-inline: calc(var(--margin-h) - 8px);
+    }
+
+    // この要素の中には margin-h の広がりを伝播させない
+    * {
+      --margin-h: 16px;
+    }
+  }
+
+  :global(.callout_note) {
+    margin-block: 1.5rem;
+    margin-inline: var(--margin-h);
+
+    font-size: 0.9rem;
+
+    border-radius: 8px;
+    color: var(--color-accent-fore);
+    border: 1px solid var(--color-accent-border);
+    background-color: var(--color-accent);
+
+    strong {
+      color: inherit;
+    }
+
+    // この要素の中には margin-h の広がりを伝播させない
+    * {
+      --margin-h: 16px;
+    }
+  }
+}

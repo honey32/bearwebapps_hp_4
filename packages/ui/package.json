@@ -1,0 +1,32 @@
+{
+  "name": "@repo/ui",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./toggle-group": "./src/toggle-group.tsx"
+  },
+  "imports": {
+    "#src/*.ts": "./src/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "generate:component": "turbo gen react-component",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@turbo/gen": "^1.12.4",
+    "@types/node": "^20.11.24",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "@radix-ui/react-toggle-group": "^1.1.1",
+    "clsx": "^1.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

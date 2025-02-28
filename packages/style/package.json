@@ -1,0 +1,33 @@
+{
+  "name": "@repo/style",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./styled": "./src/styled.tsx",
+    "./global-style": "./src/global-style.tsx",
+    "./jsx-runtime": "./src/jsx-runtime.ts",
+    "./jsx-dev-runtime": "./src/jsx-dev-runtime.ts"
+  },
+  "imports": {
+    "#_internal/*.ts": "./src/_internal/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@turbo/gen": "^1.12.4",
+    "@types/node": "^20.11.24",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
