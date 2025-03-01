@@ -23,7 +23,7 @@
     "@types/node": "^20.11.24",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
-    "typescript": "5.5.4"
+    "typescript": "5.8.2"
   },
   "dependencies": {
     "clsx": "^1.2.1",
