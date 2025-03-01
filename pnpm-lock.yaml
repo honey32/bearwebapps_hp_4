@@ -108,6 +108,9 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
     devDependencies:
+      '@types/mdast':
+        specifier: ^4.0.4
+        version: 4.0.4
       '@types/remark-heading-id':
         specifier: ^1.0.0
         version: 1.0.0
