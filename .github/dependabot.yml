@@ -18,6 +18,11 @@ updates:
         patterns:
           - "next"
           - "@next/*"
+          - "eslint-config-next"
+      eslint:
+        patterns:
+          - "eslint"
+          - "@eslint/js"
       remark:
         update-types: 
           - "patch"
