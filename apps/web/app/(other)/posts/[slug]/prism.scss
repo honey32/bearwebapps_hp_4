@@ -85,7 +85,7 @@
     color: oklch(from green 0.75 0.25 h);
   }
 
-  .token.tag>*:not(.script) {
+  .token.tag > *:not(.script) {
     color: oklch(from yellow 0.8 0.12 h);
   }
 }
