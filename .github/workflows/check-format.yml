@@ -1,5 +1,7 @@
 on:
-  pull-request:
+  pull_request:
+    branches:
+      - main
 jobs:
   check-format:
     runs-on: ubuntu-latest
