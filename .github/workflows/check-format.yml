@@ -1,3 +1,4 @@
+name: Check if the code follows the format rule
 on:
   pull_request:
     branches:
