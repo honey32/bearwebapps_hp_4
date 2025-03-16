@@ -24,7 +24,7 @@ pnpm run dev
 pnpm run build:web
 ```
 
-## Check 
+## Check
 
 ```sh
 pnpm run check-types
