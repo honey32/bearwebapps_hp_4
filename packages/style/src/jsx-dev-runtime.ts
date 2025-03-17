@@ -15,11 +15,20 @@ export const jsxDEV: typeof ReactJSXRuntimeDev.jsxDEV = (
   const s = processCssForJsx(props);
   if (s) {
     const { props, styleElem } = s;
+    const element = ReactJSXRuntimeDev.jsxDEV(
+      type,
+      props,
+      undefined,
+      isStaticChildren,
+      source,
+      self,
+    );
+
     return ReactJSXRuntimeDev.jsxDEV(
       Fragment,
-      { children: [styleElem, React.createElement(type, props)] },
+      { children: [styleElem, element] },
       key,
-      isStaticChildren,
+      true, // isStaticChildren
       source,
       self,
     );
