@@ -10,7 +10,7 @@ export const jsx: typeof ReactJSXRuntime.jsx = (type, props, key) => {
   const s = processCssForJsx(props);
   if (s) {
     const { props, styleElem } = s;
-    return ReactJSXRuntime.jsx(
+    return ReactJSXRuntime.jsxs(
       Fragment,
       { children: [styleElem, ReactJSXRuntime.jsx(type, props, key)] },
       key,
