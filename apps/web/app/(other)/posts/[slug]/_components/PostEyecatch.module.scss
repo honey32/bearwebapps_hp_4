@@ -3,10 +3,12 @@
 
   overflow: hidden;
   position: relative;
-  opacity: 0.5;
 }
 
 .nextImage {
   object-fit: cover;
   object-position: 0 calc(50% - 10px);
+
+  filter: contrast(calc(1 + var(--faded-contrast-factor) * 0.5))
+    brightness(calc(1 + var(--faded-brightness-factor) * 0.5));
 }

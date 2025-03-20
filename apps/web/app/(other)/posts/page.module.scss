@@ -32,14 +32,16 @@
     object-fit: cover;
     object-position: 0 calc(50% - 10px);
 
-    opacity: 0.2;
     z-index: -1;
+    filter: contrast(calc(1 + var(--faded-contrast-factor) * 0.8))
+      brightness(calc(1 + var(--faded-brightness-factor) * 0.8));
   }
 
   &:hover > .backgroundImage {
     object-position: 50% calc(50% - 5px);
     transition-duration: 1s;
-    opacity: 0.35;
+    filter: contrast(calc(1 + var(--faded-contrast-factor) * 0.5))
+      brightness(calc(1 + var(--faded-brightness-factor) * 0.5));
   }
 
   .postTitle {

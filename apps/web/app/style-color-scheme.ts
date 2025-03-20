@@ -2,6 +2,8 @@ const css = String.raw;
 
 export const colorSchemes = {
   light: css`
+    --faded-brightness-factor: 1;
+    --faded-contrast-factor: -1;
     --color-text: oklch(from green 0.3 0.05 h);
     --color-text-secondary: oklch(from green 0.5 0.005 h);
     --color-text-link: blue;
@@ -31,6 +33,8 @@ export const colorSchemes = {
   `,
 
   dark: css`
+    --faded-brightness-factor: -1;
+    --faded-contrast-factor: -0.1;
     --color-text: oklch(from yellow 0.8 0.01 h);
     --color-text-secondary: oklch(from yellow 0.8 0.01 h / 0.7);
     --color-text-link: oklch(from blue 0.9 c h);

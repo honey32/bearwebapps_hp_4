@@ -67,7 +67,7 @@ export default async function PostDetailPage(props: Props) {
       </Suspense>
 
       <main className={styles.main}>
-        <PostEyecatch src={post.image?.url} />
+        <PostEyecatch src={post.image?.url} id={post.id} />
 
         <PostHeader
           updatedAt={post.updatedAt}
