@@ -20,7 +20,7 @@
     "@repo/style": "workspace:*",
     "@turbo/gen": "^2.4.4",
     "@types/node": "^22.13.11",
-    "@types/react": "^19.0.2",
+    "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.2",
     "typescript": "5.8.2"
   },
