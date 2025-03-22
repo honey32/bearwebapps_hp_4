@@ -160,6 +160,7 @@ const mock_microCmsRepository: typeof prod_microCmsRepository = {
 };
 
 export const microCmsRepository =
-  process.env.NODE_ENV === "development"
+  process.env.NODE_ENV === "development" &&
+  process.env.FORCE_ENABLE_MICROCMS !== "true"
     ? mock_microCmsRepository
     : prod_microCmsRepository;
