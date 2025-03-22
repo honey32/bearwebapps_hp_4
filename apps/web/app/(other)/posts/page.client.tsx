@@ -1,6 +1,10 @@
 "use client";
 
-import { unstable_ViewTransition as ViewTransition } from "react";
+import {
+  type MouseEventHandler,
+  useCallback,
+  unstable_ViewTransition as ViewTransition,
+} from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 import { Clock, Tag } from "tabler-icons-react";
@@ -29,6 +33,15 @@ export default function PostsIndexPageClient({
   summary,
   contents,
 }: Props) {
+  const handleClickItem: MouseEventHandler = useCallback((event) => {
+    // Link area delegation を実現するための、クリックイベント処理
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    if (target.tagName === "A") return;
+
+    event.currentTarget.querySelector("a")?.click();
+  }, []);
+
   return (
     <main className={styles.root}>
       <h1 className={styles.heading}>投稿一覧</h1>
@@ -38,7 +51,11 @@ export default function PostsIndexPageClient({
       <p className={styles.summary}>{summary}</p>
 
       {contents.map((post, index) => (
-        <article key={post.id} className={styles.post}>
+        <article
+          key={post.id}
+          className={styles.post}
+          onClick={handleClickItem}
+        >
           {post.image && (
             <ViewTransition name={`post-thumbnail-${post.id}`}>
               <Image
