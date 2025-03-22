@@ -16,6 +16,36 @@ type Props = {
 export function PostHeader({ updatedAt, createdAt, title, tags }: Props) {
   return (
     <header>
+      <nav>
+        <ul css={`
+          display: flex;
+          margin: 1rem var(--margin-h) 0;
+
+          & li {
+            list-style: none;
+
+            &::after {
+              content: ">";
+              margin: 0 0.5rem;
+            }
+          }
+        `}>
+          <li>
+            <Link href="/">ホーム</Link>
+          </li>
+          <li>
+            <Link href="/posts">記事一覧</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <h1 className={styles.title}>{title}</h1>
+      <div className={styles.tags}>
+        <span>Tags: </span>
+        {tags.map((tag) => (
+          <Link key={tag} href={`/posts?tag=${tag}`}>{`#${tag}`}</Link>
+        ))}
+      </div>
       <div className={clsx(styles.dates, font_poppins.className)}>
         <span>
           Updated at:&ensp;
@@ -25,13 +55,6 @@ export function PostHeader({ updatedAt, createdAt, title, tags }: Props) {
           Created at:&ensp;
           <Time dateTime={createdAt} />
         </span>
-      </div>
-      <h1 className={styles.title}>{title}</h1>
-      <div className={styles.tags}>
-        <span>Tags: </span>
-        {tags.map((tag) => (
-          <Link key={tag} href={`/posts?tag=${tag}`}>{`#${tag}`}</Link>
-        ))}
       </div>
     </header>
   );
