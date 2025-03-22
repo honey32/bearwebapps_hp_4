@@ -10,7 +10,7 @@ implementation: [`src/styled.tsx`](./src/styled.tsx)
 
 example:
 
-[apps/web/app/(home)/_section-base.tsx#L1-L17](../../apps/web/app/(home)/_section-base.tsx#L1-L17)
+[apps/web/app/(home)/\_section-base.tsx#L1-L17](<../../apps/web/app/(home)/_section-base.tsx#L1-L17>)
 
 ```tsx
 import { styled, willBeStyled } from "@repo/style/styled";
@@ -32,7 +32,7 @@ export const SectionHeadingWrapper = styled("header")`
 `;
 ```
 
-[apps/web/app/(home)/SectionApps.tsx#L39](../../apps/web/app/(home)/SectionApps.tsx#L39)
+[apps/web/app/(home)/SectionApps.tsx#L39](<../../apps/web/app/(home)/SectionApps.tsx#L39>)
 
 ```tsx
 import { HeadingLevel } from "../_heading/heading-level";
@@ -40,23 +40,20 @@ import { HeadingLevel } from "../_heading/heading-level";
 const SectionArticleCard = SectionCardBase.as(HeadingLevel);
 ```
 
-
-
-
 ## `<div css={} />`
 
 implementation: [`src/jsx-runtime.ts`](./src/jsx-runtime.ts), [`src/jsx-dev-runtime.ts`](./src/jsx-dev-runtime.ts)
 
 example:
 
-[apps/web/app/(home)/page.tsx#L31-L35](../../apps/web/app/(home)/page.tsx#L31-L35)
+[apps/web/app/(home)/page.tsx#L31-L35](<../../apps/web/app/(home)/page.tsx#L31-L35>)
 
 ```tsx
-      <div
-        css={`
-          padding: 16px;
-        `}
-      >
-        <Hero />
-      </div>
+<div
+  css={`
+    padding: 16px;
+  `}
+>
+  <Hero />
+</div>
 ```
