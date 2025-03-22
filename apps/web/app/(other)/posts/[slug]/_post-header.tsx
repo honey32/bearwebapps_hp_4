@@ -25,7 +25,12 @@ const BreadcrumbItem = styled("li")`
   }
 `;
 
-export const PostHeader: FC<Props> = ({ updatedAt, createdAt, title, tags }) => {
+export const PostHeader: FC<Props> = ({
+  updatedAt,
+  createdAt,
+  title,
+  tags,
+}) => {
   return (
     <header
       css={`
@@ -36,7 +41,7 @@ export const PostHeader: FC<Props> = ({ updatedAt, createdAt, title, tags }) => 
       `}
     >
       <nav>
-        <Breadcrumb        >
+        <Breadcrumb>
           <BreadcrumbItem>
             <Link href="/">ホーム</Link>
           </BreadcrumbItem>
@@ -102,4 +107,4 @@ export const PostHeader: FC<Props> = ({ updatedAt, createdAt, title, tags }) => 
       </div>
     </header>
   );
-}
+};
