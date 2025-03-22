@@ -28,6 +28,9 @@
 
   border-radius: 8px;
 
+  // Link area Delegation のために、カーソルを変える
+  cursor: pointer;
+
   .backgroundImage {
     object-fit: cover;
     object-position: 0 calc(50% - 10px);
