@@ -66,9 +66,19 @@ export default async function PostDetailPage(props: Props) {
         <TocOnSideContainer content={post.content} />
       </Suspense>
 
-      <main className={styles.main}>
-        <PostEyecatch src={post.image?.url} id={post.id} />
+      <PostEyecatch src={post.image?.url} id={post.id} />
 
+      <main
+        className={styles.main}
+        // Sass が starting-style を認識してくれないので、この部分のみ自作 css-in-js で対応
+        css={`
+          opacity: 1;
+          transition: opacity 0.5s 0.2s ease-out;
+          @starting-style {
+            opacity: 0;
+          }
+        `}
+      >
         <PostHeader
           updatedAt={post.updatedAt}
           createdAt={post.publishedAt}
