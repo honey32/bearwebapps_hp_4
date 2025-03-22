@@ -47,7 +47,7 @@ export default async function Page(props: Props) {
       </Suspense>
 
       <main className={styles.main}>
-        <PostEyecatch src={post.image?.url} />
+        <PostEyecatch src={post.image?.url} id={slug} />
 
         <PostHeader
           updatedAt={post.updatedAt}
