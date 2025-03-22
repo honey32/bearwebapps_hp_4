@@ -1,12 +1,42 @@
+@keyframes parallax {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(400%);
+    opacity: 0;
+  }
+}
+
 .wrapper {
-  height: min(240px, 40vw);
+  z-index: -1;
+  height: min(480px, 60vw);
 
   overflow: hidden;
   position: relative;
-  opacity: 0.5;
+
+  animation: parallax linear;
+  animation-duration: 1ms;
+  animation-timeline: scroll();
+
+  margin-block-end: -64px;
+
+  @media screen and (min-width: 960px) {
+    margin-block-end: -160px;
+  }
 }
 
 .nextImage {
   object-fit: cover;
-  object-position: 0 calc(50% - 10px);
+  object-position: 50% 100%;
+
+  filter: contrast(calc(1 + var(--faded-contrast-factor) * 0.5))
+    brightness(calc(1 + var(--faded-brightness-factor) * 0.5));
 }

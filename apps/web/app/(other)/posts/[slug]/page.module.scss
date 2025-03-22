@@ -1,16 +1,16 @@
 .main {
   background-color: var(--color-bg);
+  contain: content;
 
   // シート内側左右の余白
   --margin-h: 16px;
 
-  @media screen and (min-width: 960px) {
-    margin-inline: 16px;
-    margin-block-start: 32px;
+  margin-block-start: 32px;
+  border-radius: 16px;
 
-    // 角丸・端の画像も合わせて切り抜き
+  @media screen and (min-width: 960px) {
+    margin-inline: 32px;
     border-radius: 8px;
-    overflow: hidden;
 
     --margin-h: 32px;
   }

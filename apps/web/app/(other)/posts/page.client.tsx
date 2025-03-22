@@ -1,5 +1,6 @@
 "use client";
 
+import { unstable_ViewTransition as ViewTransition } from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 import { Clock, Tag } from "tabler-icons-react";
@@ -39,15 +40,17 @@ export default function PostsIndexPageClient({
       {contents.map((post, index) => (
         <article key={post.id} className={styles.post}>
           {post.image && (
-            <Image
-              className={styles.backgroundImage}
-              sizes="(min-width: 960px) 800px, 100vw"
-              src={post.image.url}
-              loader={microCmsImageLoader}
-              fill
-              alt=""
-              priority={index < 3} // above the fold であろうモノのみ true
-            />
+            <ViewTransition name={`post-thumbnail-${post.id}`}>
+              <Image
+                className={styles.backgroundImage}
+                sizes="(min-width: 960px) 800px, 100vw"
+                src={post.image.url}
+                loader={microCmsImageLoader}
+                fill
+                alt=""
+                priority={index < 3} // above the fold であろうモノのみ true
+              />
+            </ViewTransition>
           )}
           <div className={clsx(styles.postNumbers, font_poppins.className)}>
             <span>

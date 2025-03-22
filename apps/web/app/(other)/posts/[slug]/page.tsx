@@ -11,7 +11,7 @@ import Toc from "./_components/Toc";
 import TocOnSideContainer from "./_components/TocOnSideContainer";
 import { PostEyecatch } from "./_components/PostEyecatch";
 import { PostFooterImage } from "./_components/PostFooterImage";
-import { PostHeader } from "./_components/PostHeader";
+import { PostHeader } from "./_post-header";
 
 type Params = {
   slug: string;
@@ -66,9 +66,19 @@ export default async function PostDetailPage(props: Props) {
         <TocOnSideContainer content={post.content} />
       </Suspense>
 
-      <main className={styles.main}>
-        <PostEyecatch src={post.image?.url} />
+      <PostEyecatch src={post.image?.url} id={post.id} />
 
+      <main
+        className={styles.main}
+        // Sass が starting-style を認識してくれないので、この部分のみ自作 css-in-js で対応
+        css={`
+          opacity: 1;
+          transition: opacity 0.5s 0.2s ease-out;
+          @starting-style {
+            opacity: 0;
+          }
+        `}
+      >
         <PostHeader
           updatedAt={post.updatedAt}
           createdAt={post.publishedAt}

@@ -12,7 +12,7 @@ import Toc from "../posts/[slug]/_components/Toc";
 import TocOnSideContainer from "../posts/[slug]/_components/TocOnSideContainer";
 import { PostEyecatch } from "../posts/[slug]/_components/PostEyecatch";
 import { PostFooterImage } from "../posts/[slug]/_components/PostFooterImage";
-import { PostHeader } from "../posts/[slug]/_components/PostHeader";
+import { PostHeader } from "../posts/[slug]/_post-header";
 
 type Props = {
   searchParams: Promise<ParsedUrlQuery>;
@@ -47,7 +47,7 @@ export default async function Page(props: Props) {
       </Suspense>
 
       <main className={styles.main}>
-        <PostEyecatch src={post.image?.url} />
+        <PostEyecatch src={post.image?.url} id={slug} />
 
         <PostHeader
           updatedAt={post.updatedAt}
