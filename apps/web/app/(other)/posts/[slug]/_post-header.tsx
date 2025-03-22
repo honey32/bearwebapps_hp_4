@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { type FC } from "react";
 
 import { Time } from "@/app/_common/date-time-format";
 import { font_poppins } from "@/app/_common/fonts";
@@ -24,7 +25,7 @@ const BreadcrumbItem = styled("li")`
   }
 `;
 
-export function PostHeader({ updatedAt, createdAt, title, tags }: Props) {
+export const PostHeader: FC<Props> = ({ updatedAt, createdAt, title, tags }) => {
   return (
     <header
       css={`

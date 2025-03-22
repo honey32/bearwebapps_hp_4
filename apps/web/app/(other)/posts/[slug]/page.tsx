@@ -11,7 +11,7 @@ import Toc from "./_components/Toc";
 import TocOnSideContainer from "./_components/TocOnSideContainer";
 import { PostEyecatch } from "./_components/PostEyecatch";
 import { PostFooterImage } from "./_components/PostFooterImage";
-import { PostHeader } from "./_components/PostHeader";
+import { PostHeader } from "./_post-header";
 
 type Params = {
   slug: string;
