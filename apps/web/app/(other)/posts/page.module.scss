@@ -6,12 +6,6 @@
   }
 }
 
-.heading,
-.summary,
-.tag {
-  margin: 0 16px;
-}
-
 .tag {
   margin-block-start: 16px;
 }
@@ -21,7 +15,6 @@
 }
 
 .post {
-  margin: 16px 0;
   padding: 16px 16px;
 
   position: relative;
@@ -103,6 +96,8 @@
   }
 
   @media screen and (min-width: 960px) {
+    padding: 32px 48px;
+
     .postTitle {
       font-size: 1.8rem;
     }
