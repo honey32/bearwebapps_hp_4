@@ -28,6 +28,8 @@ type Props = {
   }>;
 };
 
+const pc = `@media screen and (min-width: 960px)`;
+
 export default function PostsIndexPageClient({
   tag,
   summary,
@@ -44,63 +46,85 @@ export default function PostsIndexPageClient({
 
   return (
     <main className={styles.root}>
-      <h1 className={styles.heading}>投稿一覧</h1>
+      <div
+        css={`
+          display: grid;
+          gap: 16px;
+          padding: 16px;
 
-      {tag && <p className={styles.tag}>タグ：「{tag.name}」</p>}
+          ${pc} {
+            padding: 16px 48px;
+          }
+        `}
+      >
+        <h1 className={styles.heading}>投稿一覧</h1>
 
-      <p className={styles.summary}>{summary}</p>
+        {tag && <p className={styles.tag}>タグ：「{tag.name}」</p>}
 
-      {contents.map((post, index) => (
-        <article
-          key={post.id}
-          className={styles.post}
-          onClick={handleClickItem}
-        >
-          {post.image && (
-            <ViewTransition name={`post-thumbnail-${post.id}`}>
-              <Image
-                className={styles.backgroundImage}
-                sizes="(min-width: 960px) 800px, 100vw"
-                src={post.image.url}
-                loader={microCmsImageLoader}
-                fill
-                alt=""
-                priority={index < 3} // above the fold であろうモノのみ true
-              />
-            </ViewTransition>
-          )}
-          <div className={clsx(styles.postNumbers, font_poppins.className)}>
-            <span>
-              <Clock size={12} aria-label="更新日" />
-              <time dateTime={post.updatedAt}>
-                {isoStringToFormattedDateTime(post.updatedAt)}
-              </time>
-            </span>
-            <span>
-              <Clock size={12} aria-label="投稿日" />
-              <time dateTime={post.publishedAt}>
-                ({isoStringToFormattedDateTime(post.publishedAt)})
-              </time>
-            </span>
-          </div>
+        <p className={styles.summary}>{summary}</p>
+      </div>
 
-          <h2 className={styles.postTitle}>
-            <Link href={`/posts/${post.id}`}>{post.title}</Link>
-          </h2>
+      <div
+        css={`
+          display: grid;
+          gap: 16px;
+          ${pc} {
+            gap: 0;
+          }
+        `}
+      >
+        {contents.map((post, index) => (
+          <article
+            key={post.id}
+            className={styles.post}
+            onClick={handleClickItem}
+          >
+            {post.image && (
+              <ViewTransition name={`post-thumbnail-${post.id}`}>
+                <Image
+                  className={styles.backgroundImage}
+                  sizes="(min-width: 960px) 800px, 100vw"
+                  src={post.image.url}
+                  loader={microCmsImageLoader}
+                  fill
+                  alt=""
+                  priority={index < 3} // above the fold であろうモノのみ true
+                />
+              </ViewTransition>
+            )}
+            <div className={clsx(styles.postNumbers, font_poppins.className)}>
+              <span>
+                <Clock size={12} aria-label="更新日" />
+                <time dateTime={post.updatedAt}>
+                  {isoStringToFormattedDateTime(post.updatedAt)}
+                </time>
+              </span>
+              <span>
+                <Clock size={12} aria-label="投稿日" />
+                <time dateTime={post.publishedAt}>
+                  ({isoStringToFormattedDateTime(post.publishedAt)})
+                </time>
+              </span>
+            </div>
 
-          <p className={styles.postDesc}>{post.exerpt}</p>
+            <h2 className={styles.postTitle}>
+              <Link href={`/posts/${post.id}`}>{post.title}</Link>
+            </h2>
 
-          <div className={styles.tags}>
-            <Tag size={20} className={styles.tagsIcon} />
-            {post.tags.map((tag) => (
-              <Link
-                key={tag.name}
-                href={`/posts?tag=${tag.name}`}
-              >{`#${tag.name}`}</Link>
-            ))}
-          </div>
-        </article>
-      ))}
+            <p className={styles.postDesc}>{post.exerpt}</p>
+
+            <div className={styles.tags}>
+              <Tag size={20} className={styles.tagsIcon} />
+              {post.tags.map((tag) => (
+                <Link
+                  key={tag.name}
+                  href={`/posts?tag=${tag.name}`}
+                >{`#${tag.name}`}</Link>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
     </main>
   );
 }
