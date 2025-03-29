@@ -12,11 +12,8 @@
   @media screen and (min-width: 960px) {
     display: grid;
     padding: 0;
-    grid-template-columns: 1fr minmax(0, 50rem) 24rem 1fr;
-
-    & > * {
-      grid-column: 2/4;
-    }
+    grid-template-columns: minmax(0, 54rem) 24rem;
+    justify-content: center;
 
     .contents {
       margin: 0 32px;
