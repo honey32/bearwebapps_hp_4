@@ -18,7 +18,7 @@
     "@types/react-dom": "19.0.4",
     "@vcarl/remark-headings": "^0.1.0",
     "clsx": "^2.1.1",
-    "eslint": "^9.22.0",
+    "eslint": "^9.23.0",
     "eslint-config-next": "15.2.3",
     "jotai": "^2.12.2",
     "next": "15.2.3",
