@@ -1,13 +1,12 @@
 "use client";
 
 import { font_poppins } from "@/app/_common/fonts";
-import { useScrollYDirection } from "./useScrollingYDirection";
-
-type Props = {};
+import { useScrollYDirection } from "./_use-scroll-y-direction";
+import { type FC } from "react";
 
 const pc = "@media screen and (min-width: 960px)";
 
-export default function GlobalHeader({}: Props) {
+export const GlobalHeader: FC = () => {
   const scrollDirection = useScrollYDirection();
 
   return (
@@ -110,4 +109,4 @@ export default function GlobalHeader({}: Props) {
       </div>
     </header>
   );
-}
+};

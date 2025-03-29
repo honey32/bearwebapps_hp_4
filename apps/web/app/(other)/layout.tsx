@@ -1,4 +1,4 @@
-import GlobalHeader from "./GlobalHeader";
+import { GlobalHeader } from "./_global-header";
 
 type Props = {
   children: React.ReactNode;
