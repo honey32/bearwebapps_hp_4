@@ -21,13 +21,13 @@
     "@turbo/gen": "^2.4.4",
     "@types/node": "^22.14.0",
     "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.2",
+    "@types/react-dom": "^19.1.1",
     "typescript": "5.8.2"
   },
   "dependencies": {
     "@radix-ui/react-toggle-group": "^1.1.1",
     "clsx": "^2.1.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.1.0"
   }
 }
