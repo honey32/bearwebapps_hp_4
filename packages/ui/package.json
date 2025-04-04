@@ -18,7 +18,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/style": "workspace:*",
-    "@turbo/gen": "^2.4.4",
+    "@turbo/gen": "^2.5.0",
     "@types/node": "^22.14.0",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.2",
