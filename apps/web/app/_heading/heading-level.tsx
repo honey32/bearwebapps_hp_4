@@ -12,13 +12,18 @@ type Props<T extends ElementName> = {
 
 export const HeadingLevel = <T extends ElementName>({
   as,
+  ref,
   ...props
 }: Props<T>) => {
   const Comp = as as ElementName;
   const parentLevel = use(HeadingLevelContext);
   return (
     <HeadingLevelContext value={parentLevel + 1}>
-      <Comp {...props} />
+      <Comp
+        {...props}
+        //@ts-ignore ref の型不一致は無視する
+        ref={ref}
+      />
     </HeadingLevelContext>
   );
 };
