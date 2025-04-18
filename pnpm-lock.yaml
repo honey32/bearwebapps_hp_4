@@ -51,8 +51,8 @@ importers:
         specifier: 15.3.1
         version: 15.3.1(eslint@9.24.0)(typescript@5.8.3)
       jotai:
-        specifier: ^2.12.2
-        version: 2.12.2(@types/react@19.1.2)(react@19.1.0)
+        specifier: ^2.12.3
+        version: 2.12.3(@types/react@19.1.2)(react@19.1.0)
       next:
         specifier: 15.3.1
         version: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.86.3)
@@ -2044,8 +2044,8 @@ packages:
     resolution: {integrity: sha512-H0dkQoCa3b2VEeKQBOxFph+JAbcrQdE7KC0UkqwpLmv2EC4P41QXP+rqo9wYodACiG5/WM5s9oDApTU8utwj9g==}
     engines: {node: '>= 0.4'}
 
-  jotai@2.12.2:
-    resolution: {integrity: sha512-oN8715y7MkjXlSrpyjlR887TOuc/NLZMs9gvgtfWH/JP47ChwO0lR2ijSwBvPMYyXRAPT+liIAhuBavluKGgtA==}
+  jotai@2.12.3:
+    resolution: {integrity: sha512-DpoddSkmPGXMFtdfnoIHfueFeGP643nqYUWC6REjUcME+PG2UkAtYnLbffRDw3OURI9ZUTcRWkRGLsOvxuWMCg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -5177,7 +5177,7 @@ snapshots:
       has-symbols: 1.1.0
       set-function-name: 2.0.2
 
-  jotai@2.12.2(@types/react@19.1.2)(react@19.1.0):
+  jotai@2.12.3(@types/react@19.1.2)(react@19.1.0):
     optionalDependencies:
       '@types/react': 19.1.2
       react: 19.1.0
