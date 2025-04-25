@@ -14,6 +14,11 @@ updates:
       time: "18:00"
       timezone: "Asia/Tokyo"
     groups:
+      turbo:
+        patterns:
+          - "turbo"
+          - "@turbo/*"
+          - "eslint-plugin-turbo"
       react:
         patterns:
           - "react"
