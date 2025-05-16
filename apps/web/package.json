@@ -33,7 +33,7 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "remark-stringify": "^11.0.0",
-    "sass": "1.87.0",
+    "sass": "1.89.0",
     "server-only": "^0.0.1",
     "tabler-icons-react": "^1.56.0",
     "typescript": "^5.8.3",
