@@ -14,7 +14,7 @@
     "@repo/typescript-config": "workspace:*",
     "@repo/ui": "workspace:*",
     "@types/node": "22.15.21",
-    "@types/react": "19.1.4",
+    "@types/react": "19.1.5",
     "@types/react-dom": "19.1.5",
     "@vcarl/remark-headings": "^0.1.0",
     "clsx": "^2.1.1",
