@@ -145,15 +145,15 @@
   }
 
   blockquote {
+    // margin 相殺を回避するため
+    display: block flow-root;
+
     margin-block: 1.5rem;
     padding: 0 8px;
 
     font-size: 0.9rem;
-
-    // 相殺回避
-    border-block: 1px solid transparent;
-
     color: var(--color-accent2-fore);
+
     border-inline-start: 8px solid var(--color-accent2);
     background-color: var(--color-accent2-weak);
 
