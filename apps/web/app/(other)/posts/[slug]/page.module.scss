@@ -72,13 +72,8 @@
   }
 
   h2 {
-    margin-block-start: 3rem;
-    margin-block-end: 1rem;
-    margin-inline: 0;
-
-    padding-block-start: 0.9rem;
-    padding-block-end: 1rem;
-    padding-inline: 16px;
+    margin: 3rem 0 1rem;
+    padding: 0.9rem 16px 1rem;
 
     border-inline-start: 8px solid var(--color-text-accent-adornment);
 
@@ -145,15 +140,15 @@
   }
 
   blockquote {
+    // margin 相殺を回避するため
+    display: block flow-root;
+
     margin-block: 1.5rem;
     padding: 0 8px;
 
     font-size: 0.9rem;
-
-    // 相殺回避
-    border-block: 1px solid transparent;
-
     color: var(--color-accent2-fore);
+
     border-inline-start: 8px solid var(--color-accent2);
     background-color: var(--color-accent2-weak);
 
