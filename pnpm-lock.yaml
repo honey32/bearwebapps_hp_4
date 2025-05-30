@@ -30,8 +30,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       '@types/node':
-        specifier: 22.15.21
-        version: 22.15.21
+        specifier: 22.15.27
+        version: 22.15.27
       '@types/react':
         specifier: 19.1.5
         version: 19.1.5
@@ -171,10 +171,10 @@ importers:
         version: link:../typescript-config
       '@turbo/gen':
         specifier: ^2.5.1
-        version: 2.5.3(@types/node@22.15.21)(typescript@5.8.3)
+        version: 2.5.3(@types/node@22.15.27)(typescript@5.8.3)
       '@types/node':
-        specifier: ^22.15.21
-        version: 22.15.21
+        specifier: ^22.15.27
+        version: 22.15.27
       '@types/react':
         specifier: ^19.1.5
         version: 19.1.5
@@ -213,10 +213,10 @@ importers:
         version: link:../typescript-config
       '@turbo/gen':
         specifier: ^2.5.1
-        version: 2.5.3(@types/node@22.15.21)(typescript@5.8.3)
+        version: 2.5.3(@types/node@22.15.27)(typescript@5.8.3)
       '@types/node':
-        specifier: ^22.15.21
-        version: 22.15.21
+        specifier: ^22.15.27
+        version: 22.15.27
       '@types/react':
         specifier: ^19.1.5
         version: 19.1.5
@@ -817,8 +817,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.15.21':
-    resolution: {integrity: sha512-EV/37Td6c+MgKAbkcLG6vqZ2zEYHD7bvSrzqqs2RIhbA6w3x+Dqz8MZM3sP6kGTeLrdoOgKZe+Xja7tUB2DNkQ==}
+  '@types/node@22.15.27':
+    resolution: {integrity: sha512-5fF+eu5mwihV2BeVtX5vijhdaZOfkQTATrePEaXTcKqI16LhJ7gi2/Vhd9OZM0UojcdmiOCVg5rrax+i1MdoQQ==}
 
   '@types/prismjs@1.26.5':
     resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
@@ -3556,7 +3556,7 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@turbo/gen@2.5.3(@types/node@22.15.21)(typescript@5.8.3)':
+  '@turbo/gen@2.5.3(@types/node@22.15.27)(typescript@5.8.3)':
     dependencies:
       '@turbo/workspaces': 2.5.3
       commander: 10.0.1
@@ -3566,7 +3566,7 @@ snapshots:
       node-plop: 0.26.3
       picocolors: 1.0.1
       proxy-agent: 6.5.0
-      ts-node: 10.9.2(@types/node@22.15.21)(typescript@5.8.3)
+      ts-node: 10.9.2(@types/node@22.15.27)(typescript@5.8.3)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -3608,7 +3608,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 22.15.21
+      '@types/node': 22.15.27
 
   '@types/hast@2.3.10':
     dependencies:
@@ -3639,7 +3639,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.15.21':
+  '@types/node@22.15.27':
     dependencies:
       undici-types: 6.21.0
 
@@ -3659,7 +3659,7 @@ snapshots:
 
   '@types/through@0.0.33':
     dependencies:
-      '@types/node': 22.15.21
+      '@types/node': 22.15.27
 
   '@types/tinycolor2@1.4.6': {}
 
@@ -6328,14 +6328,14 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  ts-node@10.9.2(@types/node@22.15.21)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@22.15.27)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.15.21
+      '@types/node': 22.15.27
       acorn: 8.14.1
       acorn-walk: 8.3.4
       arg: 4.1.3
