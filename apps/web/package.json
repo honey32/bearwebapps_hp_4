@@ -15,7 +15,7 @@
     "@repo/ui": "workspace:*",
     "@types/node": "22.15.27",
     "@types/react": "19.1.6",
-    "@types/react-dom": "19.1.5",
+    "@types/react-dom": "19.1.6",
     "@vcarl/remark-headings": "^0.1.0",
     "clsx": "^2.1.1",
     "eslint": "^9.25.1",
