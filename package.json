@@ -14,7 +14,7 @@
     "format:root": "prettier . --write"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "turbo": "^2.5.1",
     "typescript": "5.8.3"
   },
