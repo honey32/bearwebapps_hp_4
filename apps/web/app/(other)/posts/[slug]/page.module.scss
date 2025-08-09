@@ -43,7 +43,7 @@
   }
 
   :where(p, ul, ol, h1, h2, h3, h4) {
-    margin-block: 1rem;
+    margin-block: var(--_typo-space, 1rem);
     margin-inline: var(--margin-h);
   }
 
@@ -128,9 +128,10 @@
     display: block flow-root;
 
     margin-block: 1.5rem;
-    padding: 0 8px;
+    padding: 0.5rem 8px;
 
     font-size: 0.9rem;
+    --_typo-space: 0.9rem;
     color: var(--color-accent2-fore);
 
     border-inline-start: 8px solid var(--color-accent2);
