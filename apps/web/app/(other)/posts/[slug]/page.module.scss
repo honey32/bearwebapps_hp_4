@@ -32,38 +32,26 @@
 }
 
 .content {
-  p {
+  :where(p) {
     word-break: auto-phrase;
     text-wrap: pretty;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  :where(h1, h2, h3, h4, h5, h6) {
     word-break: auto-phrase;
     text-wrap: pretty;
   }
 
-  p,
-  ul,
-  ol,
-  h1,
-  h2,
-  h3,
-  h4 {
+  :where(p, ul, ol, h1, h2, h3, h4) {
     margin-block: 1rem;
     margin-inline: var(--margin-h);
   }
 
-  strong {
+  :where(strong) {
     color: var(--color-text-semi-accent);
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  :where(h1, h2, h3, h4) {
     font-feature-settings: "palt", "kern";
     letter-spacing: 0.1rem;
     line-height: 1.2;
@@ -71,7 +59,7 @@
     color: var(--color-text-accent);
   }
 
-  h2 {
+  :where(h2) {
     margin: 3rem 0 1rem;
     padding: 0.9rem 16px 1rem;
 
@@ -85,37 +73,33 @@
     }
   }
 
-  h3 {
+  :where(h3) {
     margin-block-start: 2rem;
     line-height: 1.5;
   }
 
-  ul,
-  ol {
+  :where(ul, ol) {
     margin-inline-start: calc(16px + 2rem);
 
-    ul,
-    ol {
+    :where(ul, ol) {
       margin-block: 0;
       margin-inline-start: 1rem;
     }
   }
 
-  p,
-  ul,
-  ol {
+  :where(p, ul, ol) {
     line-height: 1.8;
     font-feature-settings: "pwid";
   }
 
-  hr {
+  :where(hr) {
     margin: 2rem 64px;
     border: none;
     height: 1px;
     background-color: var(--color-border);
   }
 
-  p code {
+  :where(p code) {
     background-color: var(--color-bg-card);
     padding: 4px 8px 2px;
     margin-inline: 4px;
@@ -124,7 +108,7 @@
     background-color: oklch(from cyan 0.2 0.2 h);
   }
 
-  pre:has(code) {
+  :where(pre:has(code)) {
     padding: 16px 16px;
     overflow-x: auto;
     max-width: 100%;
@@ -139,7 +123,7 @@
     }
   }
 
-  blockquote {
+  :where(blockquote) {
     // margin 相殺を回避するため
     display: block flow-root;
 
@@ -157,12 +141,12 @@
     }
 
     // この要素の中には margin-h の広がりを伝播させない
-    * {
+    & > :where(*) {
       --margin-h: 16px;
     }
   }
 
-  :global(.callout_note) {
+  :where(:global(.callout_note)) {
     margin-block: 1.5rem;
     margin-inline: var(--margin-h);
 
@@ -173,12 +157,12 @@
     border: 1px solid var(--color-accent-border);
     background-color: var(--color-accent);
 
-    strong {
+    :where(strong) {
       color: inherit;
     }
 
     // この要素の中には margin-h の広がりを伝播させない
-    * {
+    & > :where(*) {
       --margin-h: 16px;
     }
   }
