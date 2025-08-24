@@ -41,7 +41,7 @@
     "@types/react": "19.1.10",
     "@types/react-dom": "19.1.7",
     "@types/remark-heading-id": "^1.0.0",
-    "eslint": "^9.28.0",
+    "eslint": "catalog:",
     "eslint-config-next": "15.5.0",
     "sass": "1.90.0"
   }
