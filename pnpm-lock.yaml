@@ -23,33 +23,15 @@ importers:
       '@repo/style':
         specifier: workspace:*
         version: link:../../packages/style
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@types/node':
-        specifier: 24.3.0
-        version: 24.3.0
-      '@types/react':
-        specifier: 19.1.10
-        version: 19.1.10
-      '@types/react-dom':
-        specifier: 19.1.7
-        version: 19.1.7(@types/react@19.1.10)
       '@vcarl/remark-headings':
         specifier: ^0.1.0
         version: 0.1.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      eslint:
-        specifier: ^9.28.0
-        version: 9.33.0
-      eslint-config-next:
-        specifier: 15.5.0
-        version: 15.5.0(eslint@9.33.0)(typescript@5.9.2)
       jotai:
         specifier: ^2.12.3
         version: 2.13.1(@types/react@19.1.10)(react@19.1.1)
@@ -89,9 +71,6 @@ importers:
       remark-stringify:
         specifier: ^11.0.0
         version: 11.0.0
-      sass:
-        specifier: 1.90.0
-        version: 1.90.0
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -111,12 +90,33 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
+      '@types/node':
+        specifier: 24.3.0
+        version: 24.3.0
+      '@types/react':
+        specifier: 19.1.10
+        version: 19.1.10
+      '@types/react-dom':
+        specifier: 19.1.7
+        version: 19.1.7(@types/react@19.1.10)
       '@types/remark-heading-id':
         specifier: ^1.0.0
         version: 1.0.0
+      eslint:
+        specifier: ^9.28.0
+        version: 9.33.0
+      eslint-config-next:
+        specifier: 15.5.0
+        version: 15.5.0(eslint@9.33.0)(typescript@5.9.2)
+      sass:
+        specifier: 1.90.0
+        version: 1.90.0
 
   packages/eslint-config:
     devDependencies:

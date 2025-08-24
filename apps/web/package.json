@@ -11,15 +11,9 @@
   },
   "dependencies": {
     "@repo/style": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
     "@repo/ui": "workspace:*",
-    "@types/node": "24.3.0",
-    "@types/react": "19.1.10",
-    "@types/react-dom": "19.1.7",
     "@vcarl/remark-headings": "^0.1.0",
     "clsx": "^2.1.1",
-    "eslint": "^9.28.0",
-    "eslint-config-next": "15.5.0",
     "jotai": "^2.12.3",
     "next": "15.5.0",
     "next-query-utils": "^1.1.0",
@@ -33,7 +27,6 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "remark-stringify": "^11.0.0",
-    "sass": "1.90.0",
     "server-only": "^0.0.1",
     "tabler-icons-react": "^1.56.0",
     "typescript": "^5.9.2",
@@ -42,7 +35,14 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "24.3.0",
     "@types/mdast": "^4.0.4",
-    "@types/remark-heading-id": "^1.0.0"
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
+    "@types/remark-heading-id": "^1.0.0",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "15.5.0",
+    "sass": "1.90.0"
   }
 }
