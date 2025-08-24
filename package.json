@@ -8,6 +8,7 @@
     "start:web": "turbo wen#start",
     "check-types": "turbo check-types",
     "lint": "turbo lint check-format:root",
+    "lint-fix": "turbo lint-fix",
     "check-format": "turbo check-format:root",
     "check-format:root": "prettier . --check",
     "format": "turbo format:root",
