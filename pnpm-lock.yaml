@@ -108,6 +108,9 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
     devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4

@@ -41,6 +41,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
     "@types/mdast": "^4.0.4",
     "@types/remark-heading-id": "^1.0.0"
   }
