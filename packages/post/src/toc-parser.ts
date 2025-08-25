@@ -4,7 +4,7 @@ import remarkParse from "remark-parse";
 import remarkHeadingId from "remark-heading-id";
 import remarkHeadings from "@vcarl/remark-headings";
 
-export const markdownTocParser = unified()
+export const tocParser = unified()
   .use(remarkParse)
   .use(remarkHeadingId)
   .use(remarkStringify)

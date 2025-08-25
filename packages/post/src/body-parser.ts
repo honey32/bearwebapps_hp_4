@@ -9,11 +9,9 @@ import rehypeReact from "rehype-react";
 import rehypeRaw from "rehype-raw";
 import rehypePrismAll from "rehype-prism-plus";
 
-import { myNotePlugin } from "./myNotePlugin";
+import { myNotePlugin } from "#src/_plugins/my-note-plugin.ts";
 
-import "../prism.scss";
-
-export const markdownBodyParser = unified()
+export const bodyParser = unified()
   .use(remarkParse)
   .use(remarkDirective)
   .use(myNotePlugin)

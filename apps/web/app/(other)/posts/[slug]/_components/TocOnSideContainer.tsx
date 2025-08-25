@@ -1,4 +1,4 @@
-import { markdownTocParser } from "../_md/markdownTocParser";
+import { tocParser } from "@repo/post/toc-parser";
 
 import TocOnSide from "./TocOnSide";
 
@@ -15,7 +15,7 @@ type HeadingData = {
 };
 
 export default async function TocOnSideContainer({ content }: Props) {
-  const toc = await markdownTocParser.process(content);
+  const toc = await tocParser.process(content);
 
   const headings = toc.data.headings as HeadingData[];
 
