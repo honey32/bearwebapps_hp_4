@@ -1,5 +1,4 @@
 import { processCssForJsx } from "#_internal/jsx-util.ts";
-import * as React from "react";
 import ReactJSXRuntimeDev from "react/jsx-dev-runtime";
 
 export const Fragment = ReactJSXRuntimeDev.Fragment;

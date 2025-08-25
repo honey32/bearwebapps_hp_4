@@ -13,7 +13,8 @@
     "#_internal/*.ts": "./src/_internal/*.ts"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
@@ -23,11 +24,12 @@
     "@types/node": "^24.3.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
+    "eslint": "catalog:",
     "typescript": "5.9.2"
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   }
 }

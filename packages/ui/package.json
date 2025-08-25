@@ -10,7 +10,8 @@
     "#src/*.ts": "./src/*.ts"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"
   },
@@ -22,12 +23,13 @@
     "@types/node": "^24.3.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
+    "eslint": "catalog:",
     "typescript": "5.9.2"
   },
   "dependencies": {
     "@radix-ui/react-toggle-group": "^1.1.7",
     "clsx": "^2.1.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   }
 }

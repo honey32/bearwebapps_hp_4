@@ -19,6 +19,9 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
+    "lint-fix": {
+      "dependsOn": ["^lint-fix"]
+    },
     "//#check-format:root": {},
     "check-types": {
       "dependsOn": ["^check-types"]
