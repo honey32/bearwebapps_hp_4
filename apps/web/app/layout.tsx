@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { font_noto_sans_jp } from "./_common/fonts";
 import { sharedOpenGraphMetadata } from "./_common/shared-og-metadata";
 import { GlobalStyle } from "@repo/style/global-style";
@@ -5,7 +7,7 @@ import HTML from "./HTML";
 import { colorSchemes } from "./style-color-scheme";
 import { resetCss } from "./style-reset-css";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: { default: "Honey32", template: "%s | Honey32" },
   description: "Honey 32 bear web apps",
   openGraph: sharedOpenGraphMetadata,

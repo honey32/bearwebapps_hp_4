@@ -1,9 +1,11 @@
+import type { Metadata } from "next";
+
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import { getSingleQueryParam } from "next-query-utils";
 import PostsIndexPageClient from "./page.client";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "投稿一覧",
   openGraph: {
     ...sharedOpenGraphMetadata,

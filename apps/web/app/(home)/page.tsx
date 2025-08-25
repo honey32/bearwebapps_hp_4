@@ -1,5 +1,7 @@
 import "server-only";
 
+import type { Metadata } from "next";
+
 import Hero from "./Hero";
 import SectionApps from "./SectionApps";
 import SectionOSS from "./SectionOSS";
@@ -11,7 +13,7 @@ import SectionRecentPosts, {
   preload as preloadRecentPosts,
 } from "./SectionRecentPosts";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "ホーム",
   openGraph: {
     ...sharedOpenGraphMetadata,

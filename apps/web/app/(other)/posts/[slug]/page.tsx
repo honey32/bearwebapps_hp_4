@@ -26,7 +26,9 @@ const fetchPost = (params: Params) => {
   return microCmsRepository.getSinglePost(params);
 };
 
-export async function generateMetadata(props: PageProps<"/posts/[slug]">) {
+export async function generateMetadata(
+  props: PageProps<"/posts/[slug]">,
+): Promise<Metadata> {
   const params = await props.params;
   const post = await fetchPost({ slug: params.slug });
   if (!post) return {};
