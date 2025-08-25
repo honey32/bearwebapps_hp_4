@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   default:
+    '@types/node':
+      specifier: ^24.3.0
+      version: 24.3.0
     '@types/react':
       specifier: ^19.0.0
       version: 19.1.10
@@ -85,7 +88,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/node':
-        specifier: 24.3.0
+        specifier: 'catalog:'
         version: 24.3.0
       '@types/react':
         specifier: 'catalog:'
@@ -225,7 +228,7 @@ importers:
         specifier: ^2.5.1
         version: 2.5.6(@types/node@24.3.0)(typescript@5.9.2)
       '@types/node':
-        specifier: ^24.3.0
+        specifier: 'catalog:'
         version: 24.3.0
       '@types/react':
         specifier: 'catalog:'
@@ -270,7 +273,7 @@ importers:
         specifier: ^2.5.1
         version: 2.5.6(@types/node@24.3.0)(typescript@5.9.2)
       '@types/node':
-        specifier: ^24.3.0
+        specifier: 'catalog:'
         version: 24.3.0
       '@types/react':
         specifier: 'catalog:'
