@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint app/** types/**",
     "lint-fix": "eslint app/** types/** --fix",
-    "check-types": "tsc --noEmit"
+    "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@repo/style": "workspace:*",
