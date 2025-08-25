@@ -34,7 +34,7 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@types/mdast": "^4.0.4",
-    "@types/react": "19.1.10",
+    "@types/react": "catalog:",
     "@types/remark-heading-id": "^1.0.0",
     "eslint": "catalog:",
     "typescript": "^5.9.2"
