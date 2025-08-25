@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./PostFooterImage.module.scss";
+
 import { microCmsImageLoader } from "@/app/_repositories/posts/microCmsImageLoader";
+
+import styles from "./PostFooterImage.module.scss";
 
 type Props = {
   src?: string;

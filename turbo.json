@@ -13,7 +13,9 @@
         "MICROCMS_API_BASE_URL",
         "MICROCMS_WEBHOOK_SECRET",
         "VERCEL_URL",
-        "VERCEL_PROJECT_PRODUCTION_URL"
+        "VERCEL_PROJECT_PRODUCTION_URL",
+        "NODE_ENV",
+        "FORCE_ENABLE_MICROCMS"
       ]
     },
     "check": {
@@ -23,12 +25,12 @@
       "dependsOn": ["^lint", "//#check-format:root", "check-types"]
     },
     "lint-fix": {
-      "dependsOn": ["^lint-fix", "//#check-format:root", "check-types"]
+      "dependsOn": ["^lint-fix", "//#format:root", "check-types"]
     },
-    "//#check-format:root": {},
     "check-types": {
       "dependsOn": ["^check-types", "//#check-format:root"]
     },
+    "//#check-format:root": {},
     "//#format:root": {},
     "dev": {
       "cache": false,

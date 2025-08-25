@@ -1,8 +1,11 @@
 "use client";
 
-import { font_poppins } from "@/app/_common/fonts";
-import { useScrollYDirection } from "./_use-scroll-y-direction";
 import { type FC } from "react";
+import Link from "next/link";
+
+import { font_poppins } from "@/app/_common/fonts";
+
+import { useScrollYDirection } from "./_use-scroll-y-direction";
 
 const pc = "@media screen and (min-width: 960px)";
 
@@ -62,18 +65,14 @@ export const GlobalHeader: FC = () => {
               padding: 16px 0 8px;
               text-align: unset;
             }
+
+            /* Link に css を指定するのが現在のところ不可能なのでネストを利用する */
+            & > a:is(:any-link) {
+              color: inherit;
+            }
           `}
         >
-          <a
-            href="/"
-            css={`
-              &:is(:link, :visited, :hover, :active) {
-                color: inherit;
-              }
-            `}
-          >
-            Honey32 Bear Web Apps
-          </a>
+          <Link href="/">Honey32 Bear Web Apps</Link>
         </h1>
         <div
           css={`
@@ -90,19 +89,27 @@ export const GlobalHeader: FC = () => {
             }
           `}
         >
-          <a href="https://github.com/honey32" target="_blank">
+          <a href="https://github.com/honey32" target="_blank" rel="noreferrer">
             GitHub
           </a>
-          <a href="https://twitter.com/honey321998" target="_blank">
+          <a
+            href="https://twitter.com/honey321998"
+            target="_blank"
+            rel="noreferrer"
+          >
             Twitter
           </a>
-          <a href="https://qiita.com/honey32" target="_blank">
+          <a href="https://qiita.com/honey32" target="_blank" rel="noreferrer">
             Qiita
           </a>
-          <a href="https://zenn.dev/honey32" target="_blank">
+          <a href="https://zenn.dev/honey32" target="_blank" rel="noreferrer">
             Zenn
           </a>
-          <a href="https://scrapbox.io/honey32/" target="_blank">
+          <a
+            href="https://scrapbox.io/honey32/"
+            target="_blank"
+            rel="noreferrer"
+          >
             Scrapbox
           </a>
         </div>

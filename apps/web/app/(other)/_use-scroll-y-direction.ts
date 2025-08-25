@@ -11,7 +11,7 @@ export const useScrollYDirection = () => {
     const ac = new AbortController();
     window.addEventListener(
       "scroll",
-      (ev) => {
+      () => {
         const deltaY = window.scrollY - prevScrollYRef.current;
         if (deltaY > 0) {
           setDirection("down");

@@ -2,9 +2,11 @@ import "server-only";
 
 import { ExternalLink, Heart, Clock, MessageDots } from "tabler-icons-react";
 
+import { zennFetcher } from "@/app/_repositories/zenn/ZennClient";
 import { font_poppins } from "@/app/_common/fonts";
 import { isoStringToFormattedDateTime } from "@/app/_common/date-time-format";
-import { zennFetcher } from "@/app/_repositories/zenn/ZennClient";
+
+import { HeadingLevel } from "../_heading/heading-level";
 
 import {
   SectionCardBase,
@@ -14,7 +16,6 @@ import {
   SectionPostNumbers,
   SectionPostTitle,
 } from "./_section-base";
-import { HeadingLevel } from "../_heading/heading-level";
 
 const fetchPosts = async () => {
   const response = await zennFetcher.userArticles(
@@ -56,7 +57,11 @@ export default async function SectionZenn() {
       {posts.map((p) => (
         <HeadingLevel as="article" key={p.id}>
           <SectionPostTitle>
-            <a href={`https://zenn.dev${p.path}`} target="_blank">
+            <a
+              href={`https://zenn.dev${p.path}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               {p.title}
               <ExternalLink size={18} />
             </a>

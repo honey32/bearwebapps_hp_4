@@ -1,6 +1,8 @@
-import { processStyle } from "#_internal/process-style.ts";
-import { clsx } from "clsx";
 import { createElement, Fragment, ReactNode } from "react";
+
+import { clsx } from "clsx";
+
+import { processStyle } from "#_internal/process-style.ts";
 
 const hasCssProp = (props: unknown): props is { css: string } => {
   return !!props && typeof props === "object" && "css" in props;

@@ -1,6 +1,8 @@
-import { styled, willBeStyled } from "@repo/style/styled";
-import { Heading } from "../_heading/heading";
 import Link from "next/link";
+
+import { styled, willBeStyled } from "@repo/style/styled";
+
+import { Heading } from "../_heading/heading";
 
 export const SectionCardBase = willBeStyled(
   ({ css }) => css`

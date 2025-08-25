@@ -1,13 +1,13 @@
 import * as prod from "react/jsx-runtime";
+
+import { unified } from "unified";
+import remarkRehype from "remark-rehype";
 import remarkParse from "remark-parse";
 import remarkHeadingId from "remark-heading-id";
-import remarkRehype from "remark-rehype";
-import rehypeRaw from "rehype-raw";
-import rehypeReact from "rehype-react";
-import { unified } from "unified";
-
-import rehypePrismAll from "rehype-prism-plus";
 import remarkDirective from "remark-directive";
+import rehypeReact from "rehype-react";
+import rehypeRaw from "rehype-raw";
+import rehypePrismAll from "rehype-prism-plus";
 
 import { myNotePlugin } from "./myNotePlugin";
 

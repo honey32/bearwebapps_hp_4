@@ -1,4 +1,5 @@
 import { createElement } from "react";
+
 import { hash } from "#_internal/hash.ts";
 
 export const processStyle = (str: string) => {

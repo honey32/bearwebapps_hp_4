@@ -6,13 +6,16 @@ import {
   unstable_ViewTransition as ViewTransition,
 } from "react";
 import Link from "next/link";
-import styles from "./page.module.scss";
+import Image from "next/image";
+
 import { Clock, Tag } from "tabler-icons-react";
 import clsx from "clsx";
+
+import { microCmsImageLoader } from "@/app/_repositories/posts/microCmsImageLoader";
 import { font_poppins } from "@/app/_common/fonts";
 import { isoStringToFormattedDateTime } from "@/app/_common/date-time-format";
-import Image from "next/image";
-import { microCmsImageLoader } from "@/app/_repositories/posts/microCmsImageLoader";
+
+import styles from "./page.module.scss";
 
 type Props = {
   tag: { name: string } | undefined;

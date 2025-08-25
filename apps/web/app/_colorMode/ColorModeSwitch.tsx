@@ -1,10 +1,10 @@
 "use client";
 
-import { useAtom } from "jotai";
 import { ArrowsRightLeft, Moon, Sun } from "tabler-icons-react";
+import { useAtom } from "jotai";
 
-import { styled } from "@repo/style/styled";
 import { ToggleGroupItem, ToggleGroupRoot } from "@repo/ui/toggle-group";
+import { styled } from "@repo/style/styled";
 
 import { colorModeAtom } from "./colorModeAtom";
 

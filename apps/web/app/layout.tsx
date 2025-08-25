@@ -1,11 +1,14 @@
-import { font_noto_sans_jp } from "./_common/fonts";
-import { sharedOpenGraphMetadata } from "./_common/shared-og-metadata";
-import { GlobalStyle } from "@repo/style/global-style";
-import HTML from "./HTML";
-import { colorSchemes } from "./style-color-scheme";
-import { resetCss } from "./style-reset-css";
+import type { Metadata } from "next";
 
-export const metadata = {
+import { GlobalStyle } from "@repo/style/global-style";
+
+import { resetCss } from "./style-reset-css";
+import { colorSchemes } from "./style-color-scheme";
+import HTML from "./HTML";
+import { sharedOpenGraphMetadata } from "./_common/shared-og-metadata";
+import { font_noto_sans_jp } from "./_common/fonts";
+
+export const metadata: Metadata = {
   title: { default: "Honey32", template: "%s | Honey32" },
   description: "Honey 32 bear web apps",
   openGraph: sharedOpenGraphMetadata,
@@ -13,11 +16,7 @@ export const metadata = {
 
 const css = String.raw;
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export default function RootLayout({ children }: Props) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   const globalStyle = css`
     :root {
       ${colorSchemes.light}

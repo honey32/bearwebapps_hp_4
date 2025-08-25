@@ -1,24 +1,23 @@
-import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
-import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
-import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
-import { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { Suspense, use } from "react";
-import { markdownBodyParser } from "./_md/markdownBodyParser";
-import styles from "./page.module.scss";
-import { PostAdjacency } from "./_components/PostAdjacency";
-import Toc from "./_components/Toc";
-import TocOnSideContainer from "./_components/TocOnSideContainer";
-import { PostEyecatch } from "./_components/PostEyecatch";
-import { PostFooterImage } from "./_components/PostFooterImage";
+import { Metadata } from "next";
+
+import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
+import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
+import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
+
 import { PostHeader } from "./_post-header";
+import { markdownBodyParser } from "./_md/markdownBodyParser";
+import TocOnSideContainer from "./_components/TocOnSideContainer";
+import Toc from "./_components/Toc";
+import { PostFooterImage } from "./_components/PostFooterImage";
+import { PostEyecatch } from "./_components/PostEyecatch";
+import { PostAdjacency } from "./_components/PostAdjacency";
+
+import styles from "./page.module.scss";
 
 type Params = {
   slug: string;
-};
-
-type Props = {
-  params: Promise<Params>;
 };
 
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
@@ -30,7 +29,9 @@ const fetchPost = (params: Params) => {
   return microCmsRepository.getSinglePost(params);
 };
 
-export async function generateMetadata(props: { params: Promise<Params> }) {
+export async function generateMetadata(
+  props: PageProps<"/posts/[slug]">,
+): Promise<Metadata> {
   const params = await props.params;
   const post = await fetchPost({ slug: params.slug });
   if (!post) return {};
@@ -50,7 +51,9 @@ export async function generateMetadata(props: { params: Promise<Params> }) {
   } satisfies Metadata;
 }
 
-export default async function PostDetailPage(props: Props) {
+export default async function PostDetailPage(
+  props: PageProps<"/posts/[slug]">,
+) {
   const params = await props.params;
   const post = await fetchPost({ slug: params.slug });
 

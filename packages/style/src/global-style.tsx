@@ -1,5 +1,6 @@
-import { processStyle } from "#_internal/process-style.ts";
 import { useMemo, type FC } from "react";
+
+import { processStyle } from "#_internal/process-style.ts";
 
 type Props = {
   children?: string;

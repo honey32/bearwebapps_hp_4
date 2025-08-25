@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { styled } from "@repo/style/styled";
 import { myProfile } from "@/app/_my_profile/myProfile";
 import { font_poppins } from "@/app/_common/fonts";

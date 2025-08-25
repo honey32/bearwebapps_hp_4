@@ -1,5 +1,8 @@
 import { ReactNode } from "react";
+
 import { ExternalLink } from "tabler-icons-react";
+
+import { HeadingLevel } from "../_heading/heading-level";
 
 import {
   SectionCardBase,
@@ -8,7 +11,6 @@ import {
   SectionPostDescription,
   SectionPostTitle,
 } from "./_section-base";
-import { HeadingLevel } from "../_heading/heading-level";
 
 type ApplicationInfo = {
   id: string;

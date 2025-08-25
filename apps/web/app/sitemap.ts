@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { microCmsRepository } from "./_repositories/posts/microCmsRepository";
 
 const makeUrl: (s: string) => string = (() => {

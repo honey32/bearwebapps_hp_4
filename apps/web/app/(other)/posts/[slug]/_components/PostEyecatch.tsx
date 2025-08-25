@@ -2,8 +2,10 @@
 
 import { unstable_ViewTransition as ViewTransition } from "react";
 import Image from "next/image";
-import styles from "./PostEyecatch.module.scss";
+
 import { microCmsImageLoader } from "@/app/_repositories/posts/microCmsImageLoader";
+
+import styles from "./PostEyecatch.module.scss";
 
 type Props = {
   src?: string;
