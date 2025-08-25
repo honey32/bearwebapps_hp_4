@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { font_poppins } from "@/app/_common/fonts";
 import { useScrollYDirection } from "./_use-scroll-y-direction";
 import { type FC } from "react";
@@ -62,18 +64,14 @@ export const GlobalHeader: FC = () => {
               padding: 16px 0 8px;
               text-align: unset;
             }
+
+            /* Link に css を指定するのが現在のところ不可能なのでネストを利用する */
+            & > a:is(:any-link) {
+              color: inherit;
+            }
           `}
         >
-          <a
-            href="/"
-            css={`
-              &:is(:link, :visited, :hover, :active) {
-                color: inherit;
-              }
-            `}
-          >
-            Honey32 Bear Web Apps
-          </a>
+          <Link href="/">Honey32 Bear Web Apps</Link>
         </h1>
         <div
           css={`
