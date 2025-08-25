@@ -3,12 +3,13 @@ import { notFound } from "next/navigation";
 
 import { getSingleQueryParam } from "next-query-utils";
 
+import { bodyParser } from "@repo/post/body-parser";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
 import { PostHeader } from "../posts/[slug]/_post-header";
-import { markdownBodyParser } from "../posts/[slug]/_md/markdownBodyParser";
 import TocOnSideContainer from "../posts/[slug]/_components/TocOnSideContainer";
+import "@repo/post/styles/prism.scss";
 import Toc from "../posts/[slug]/_components/Toc";
 import { PostFooterImage } from "../posts/[slug]/_components/PostFooterImage";
 import { PostEyecatch } from "../posts/[slug]/_components/PostEyecatch";
@@ -35,7 +36,7 @@ export default async function Page(props: PageProps<"/preview">) {
     draftKey,
   });
 
-  const parsedContent = await markdownBodyParser.process(post.content);
+  const parsedContent = await bodyParser.process(post.content);
 
   return (
     <div>

@@ -2,13 +2,14 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
+import { bodyParser } from "@repo/post/body-parser";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
 import { PostHeader } from "./_post-header";
-import { markdownBodyParser } from "./_md/markdownBodyParser";
 import TocOnSideContainer from "./_components/TocOnSideContainer";
+import "@repo/post/styles/prism.scss";
 import Toc from "./_components/Toc";
 import { PostFooterImage } from "./_components/PostFooterImage";
 import { PostEyecatch } from "./_components/PostEyecatch";
@@ -61,7 +62,7 @@ export default async function PostDetailPage(
     notFound();
   }
 
-  const parsedContent = await markdownBodyParser.process(post.content);
+  const parsedContent = await bodyParser.process(post.content);
 
   return (
     <div>

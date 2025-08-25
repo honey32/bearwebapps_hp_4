@@ -13,6 +13,10 @@
       "path": "../packages/eslint-config",
     },
     {
+      "name": "@repo/post",
+      "path": "../packages/post",
+    },
+    {
       "name": "@repo/style",
       "path": "../packages/style",
     },
