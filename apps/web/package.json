@@ -22,7 +22,7 @@
     "react-dom": "catalog:",
     "server-only": "^0.0.1",
     "tabler-icons-react": "^1.56.0",
-    "typescript": "^5.9.2"
+    "typescript": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
