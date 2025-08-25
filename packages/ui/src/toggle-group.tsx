@@ -1,4 +1,4 @@
-import * as ToggleGroup from "@radix-ui/react-toggle-group";
+import { ToggleGroup } from "radix-ui";
 
 import { styled } from "@repo/style/styled";
 
