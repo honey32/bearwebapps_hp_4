@@ -1,8 +1,10 @@
 "use client";
 
-import { useAtomValue } from "jotai";
-import { colorModeAtom } from "@/app/_colorMode/colorModeAtom";
 import type { ComponentPropsWithoutRef } from "react";
+
+import { useAtomValue } from "jotai";
+
+import { colorModeAtom } from "@/app/_colorMode/colorModeAtom";
 
 type Props = ComponentPropsWithoutRef<"html">;
 

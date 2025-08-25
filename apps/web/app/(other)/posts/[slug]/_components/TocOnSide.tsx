@@ -1,8 +1,9 @@
 "use client";
 
 import { createPortal } from "react-dom";
-import styles from "./TocOnSide.module.scss";
 import { useEffect, useState } from "react";
+
+import styles from "./TocOnSide.module.scss";
 
 type Props = {
   data: HeadingData[];

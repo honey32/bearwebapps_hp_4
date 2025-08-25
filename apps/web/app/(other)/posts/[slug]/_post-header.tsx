@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { type FC } from "react";
+import Link from "next/link";
 
-import { Time } from "@/app/_common/date-time-format";
-import { font_poppins } from "@/app/_common/fonts";
 import { styled } from "@repo/style/styled";
+import { font_poppins } from "@/app/_common/fonts";
+import { Time } from "@/app/_common/date-time-format";
 
 type Props = {
   updatedAt: string;

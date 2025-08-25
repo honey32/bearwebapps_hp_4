@@ -2,16 +2,17 @@ import "server-only";
 
 import type { Metadata } from "next";
 
-import Hero from "./Hero";
-import SectionApps from "./SectionApps";
-import SectionOSS from "./SectionOSS";
-import SectionQiita, { preload as preloadQiitaPosts } from "./SectionQiita";
-import SectionZenn, { preload as preloadZennPosts } from "./SectionZenn";
-import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
+import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
+
+import SectionZenn, { preload as preloadZennPosts } from "./SectionZenn";
 import SectionRecentPosts, {
   preload as preloadRecentPosts,
 } from "./SectionRecentPosts";
+import SectionQiita, { preload as preloadQiitaPosts } from "./SectionQiita";
+import SectionOSS from "./SectionOSS";
+import SectionApps from "./SectionApps";
+import Hero from "./Hero";
 
 export const metadata: Metadata = {
   title: "ホーム",

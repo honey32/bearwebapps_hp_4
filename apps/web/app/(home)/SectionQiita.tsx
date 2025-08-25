@@ -1,8 +1,12 @@
 import "server-only";
 
 import { ExternalLink, Heart, Folder, Clock } from "tabler-icons-react";
+
 import { font_poppins } from "@/app/_common/fonts";
 import { isoStringToFormattedDateTime } from "@/app/_common/date-time-format";
+
+import { HeadingLevel } from "../_heading/heading-level";
+
 import {
   SectionCardBase,
   SectionHeading,
@@ -11,7 +15,6 @@ import {
   SectionPostNumbers,
   SectionPostTitle,
 } from "./_section-base";
-import { HeadingLevel } from "../_heading/heading-level";
 
 type Post = {
   title: string;

@@ -4,14 +4,16 @@ import { notFound } from "next/navigation";
 import { getSingleQueryParam } from "next-query-utils";
 
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
-import { markdownBodyParser } from "../posts/[slug]/_md/markdownBodyParser";
-import styles from "../posts/[slug]/page.module.scss";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
-import Toc from "../posts/[slug]/_components/Toc";
-import TocOnSideContainer from "../posts/[slug]/_components/TocOnSideContainer";
-import { PostEyecatch } from "../posts/[slug]/_components/PostEyecatch";
-import { PostFooterImage } from "../posts/[slug]/_components/PostFooterImage";
+
 import { PostHeader } from "../posts/[slug]/_post-header";
+import { markdownBodyParser } from "../posts/[slug]/_md/markdownBodyParser";
+import TocOnSideContainer from "../posts/[slug]/_components/TocOnSideContainer";
+import Toc from "../posts/[slug]/_components/Toc";
+import { PostFooterImage } from "../posts/[slug]/_components/PostFooterImage";
+import { PostEyecatch } from "../posts/[slug]/_components/PostEyecatch";
+
+import styles from "../posts/[slug]/page.module.scss";
 
 const fetchPost = (params: { slug: string; draftKey: string }) => {
   return microCmsRepository.getPreviewPost(params).catch(() => {

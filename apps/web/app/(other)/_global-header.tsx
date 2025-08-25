@@ -1,10 +1,11 @@
 "use client";
 
+import { type FC } from "react";
 import Link from "next/link";
 
 import { font_poppins } from "@/app/_common/fonts";
+
 import { useScrollYDirection } from "./_use-scroll-y-direction";
-import { type FC } from "react";
 
 const pc = "@media screen and (min-width: 960px)";
 

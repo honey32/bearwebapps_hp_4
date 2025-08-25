@@ -1,7 +1,7 @@
 "use client";
 
-import { useSelectedLayoutSegment } from "next/navigation";
 import type { ReactNode } from "react";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 type Props = {
   children: ReactNode | null;

@@ -1,10 +1,15 @@
 import "server-only";
 
-import { isoStringToFormattedDateTime } from "@/app/_common/date-time-format";
-import { font_poppins } from "@/app/_common/fonts";
 import Link from "next/link";
+
 import { Clock } from "tabler-icons-react";
+
+import { styled } from "@repo/style/styled";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
+import { font_poppins } from "@/app/_common/fonts";
+import { isoStringToFormattedDateTime } from "@/app/_common/date-time-format";
+
+import { HeadingLevel } from "../_heading/heading-level";
 
 import {
   SectionCardBase,
@@ -15,8 +20,6 @@ import {
   SectionPostNumbers,
   SectionPostTitle,
 } from "./_section-base";
-import { HeadingLevel } from "../_heading/heading-level";
-import { styled } from "@repo/style/styled";
 
 const fetchPosts = () => microCmsRepository.getPosts({ limit: 5 });
 

@@ -5,6 +5,7 @@ import {
   type ElementType,
   type FC,
 } from "react";
+
 import { clsx } from "clsx";
 
 import { processStyle } from "#_internal/process-style.ts";

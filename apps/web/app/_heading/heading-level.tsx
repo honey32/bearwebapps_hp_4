@@ -1,6 +1,7 @@
 "use client";
 
 import { use, Fragment, ComponentPropsWithRef } from "react";
+
 import { HeadingLevelContext } from "./context";
 
 type ElementName = "section" | "article" | "aside" | "nav" | typeof Fragment;
