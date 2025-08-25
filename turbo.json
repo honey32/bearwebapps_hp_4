@@ -27,10 +27,10 @@
     "lint-fix": {
       "dependsOn": ["^lint-fix", "//#format:root", "check-types"]
     },
-    "//#check-format:root": {},
     "check-types": {
       "dependsOn": ["^check-types", "//#check-format:root"]
     },
+    "//#check-format:root": {},
     "//#format:root": {},
     "dev": {
       "cache": false,
