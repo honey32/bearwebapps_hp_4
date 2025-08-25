@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { markdownTocParser } from "../_md/markdownTocParser";
 
 import styles from "./Toc.module.scss";

@@ -3,7 +3,7 @@ import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Suspense, use } from "react";
+import { Suspense } from "react";
 import { markdownBodyParser } from "./_md/markdownBodyParser";
 import styles from "./page.module.scss";
 import { PostAdjacency } from "./_components/PostAdjacency";

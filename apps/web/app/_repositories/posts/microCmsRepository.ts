@@ -64,9 +64,11 @@ const prod_microCmsRepository = {
     return microCmsClient(`/posts?${params}`, init);
   },
 
-  // getPreviewPost は、本番環境では使わない
+  // getPreviewPost は、本番環境では使わない。型のためにシグネチャ明示が必要なので unused-vars を無視する
   getPreviewPost: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     options: { slug: string; draftKey: string },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     init?: RequestInit,
   ): Promise<Post> => {
     throw new Error("preview is invalid");
