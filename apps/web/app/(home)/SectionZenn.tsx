@@ -56,7 +56,11 @@ export default async function SectionZenn() {
       {posts.map((p) => (
         <HeadingLevel as="article" key={p.id}>
           <SectionPostTitle>
-            <a href={`https://zenn.dev${p.path}`} target="_blank">
+            <a
+              href={`https://zenn.dev${p.path}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               {p.title}
               <ExternalLink size={18} />
             </a>

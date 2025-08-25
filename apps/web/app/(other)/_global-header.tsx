@@ -90,19 +90,27 @@ export const GlobalHeader: FC = () => {
             }
           `}
         >
-          <a href="https://github.com/honey32" target="_blank">
+          <a href="https://github.com/honey32" target="_blank" rel="noreferrer">
             GitHub
           </a>
-          <a href="https://twitter.com/honey321998" target="_blank">
+          <a
+            href="https://twitter.com/honey321998"
+            target="_blank"
+            rel="noreferrer"
+          >
             Twitter
           </a>
-          <a href="https://qiita.com/honey32" target="_blank">
+          <a href="https://qiita.com/honey32" target="_blank" rel="noreferrer">
             Qiita
           </a>
-          <a href="https://zenn.dev/honey32" target="_blank">
+          <a href="https://zenn.dev/honey32" target="_blank" rel="noreferrer">
             Zenn
           </a>
-          <a href="https://scrapbox.io/honey32/" target="_blank">
+          <a
+            href="https://scrapbox.io/honey32/"
+            target="_blank"
+            rel="noreferrer"
+          >
             Scrapbox
           </a>
         </div>

@@ -69,7 +69,7 @@ export default async function SectionQiita() {
       {posts.map((p) => (
         <HeadingLevel as="article" key={p.id}>
           <SectionPostTitle>
-            <a href={p.url} target="_blank">
+            <a href={p.url} target="_blank" rel="noreferrer">
               {p.title}
               <ExternalLink size={18} />
             </a>

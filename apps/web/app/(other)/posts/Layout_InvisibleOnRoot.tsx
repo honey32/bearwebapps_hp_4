@@ -11,7 +11,7 @@ type Props = {
 export default function Layout_InvisibleOnRoot({ children }: Props) {
   const seg = useSelectedLayoutSegment();
 
-  if (!!seg) return children;
+  if (seg) return children;
 
   return null;
 }
