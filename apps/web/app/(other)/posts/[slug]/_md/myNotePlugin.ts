@@ -21,4 +21,4 @@ export const myNotePlugin = (() => {
       }
     });
   };
-}) satisfies Plugin<any, Root>;
+}) satisfies Plugin<unknown[], Root>;
