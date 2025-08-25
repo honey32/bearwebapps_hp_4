@@ -13,11 +13,7 @@ export const metadata = {
 
 const css = String.raw;
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export default function RootLayout({ children }: Props) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   const globalStyle = css`
     :root {
       ${colorSchemes.light}

@@ -1,4 +1,4 @@
-import { ReactNode, Suspense } from "react";
+import { Suspense } from "react";
 import { myProfile } from "@/app/_my_profile/myProfile";
 import styles from "./layout.module.scss";
 import Layout_InvisibleOnRoot from "./Layout_InvisibleOnRoot";
@@ -7,11 +7,7 @@ import { font_poppins } from "@/app/_common/fonts";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 import SectionRecentPosts from "@/app/(home)/SectionRecentPosts";
 
-type Props = {
-  children: ReactNode;
-};
-
-export default function Layout({ children }: Props) {
+export default function Layout({ children }: LayoutProps<"/posts">) {
   return (
     <div className={styles.root}>
       {/* 1 主要カラム */}

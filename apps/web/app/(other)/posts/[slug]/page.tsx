@@ -17,10 +17,6 @@ type Params = {
   slug: string;
 };
 
-type Props = {
-  params: Promise<Params>;
-};
-
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   const posts = await microCmsRepository.getPosts({ limit: 100 });
   return posts.contents.map((post) => ({ slug: post.id }));
@@ -30,7 +26,7 @@ const fetchPost = (params: Params) => {
   return microCmsRepository.getSinglePost(params);
 };
 
-export async function generateMetadata(props: { params: Promise<Params> }) {
+export async function generateMetadata(props: PageProps<"/posts/[slug]">) {
   const params = await props.params;
   const post = await fetchPost({ slug: params.slug });
   if (!post) return {};
@@ -50,7 +46,9 @@ export async function generateMetadata(props: { params: Promise<Params> }) {
   } satisfies Metadata;
 }
 
-export default async function PostDetailPage(props: Props) {
+export default async function PostDetailPage(
+  props: PageProps<"/posts/[slug]">,
+) {
   const params = await props.params;
   const post = await fetchPost({ slug: params.slug });
 

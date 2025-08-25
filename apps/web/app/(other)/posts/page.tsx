@@ -1,6 +1,6 @@
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
-import { ParsedUrlQuery, getSingleQueryParam } from "next-query-utils";
+import { getSingleQueryParam } from "next-query-utils";
 import PostsIndexPageClient from "./page.client";
 
 export const metadata = {
@@ -21,11 +21,7 @@ const fetchPosts = async (options: { tagId?: string }) => {
   return await microCmsRepository.getPosts(options);
 };
 
-type Props = {
-  searchParams: Promise<ParsedUrlQuery>;
-};
-
-export default async function PostsIndexPage(props: Props) {
+export default async function PostsIndexPage(props: PageProps<"/posts">) {
   const searchParams = await props.searchParams;
   const tagName = getSingleQueryParam(searchParams, "tag");
   const tag = tagName ? await fetchTag({ tagName }) : undefined;
