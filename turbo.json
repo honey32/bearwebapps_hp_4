@@ -16,6 +16,9 @@
         "VERCEL_PROJECT_PRODUCTION_URL"
       ]
     },
+    "check": {
+      "dependsOn": ["^check", "//#check-format:root", "check-types", "lint"]
+    },
     "lint": {
       "dependsOn": ["^lint", "//#check-format:root", "check-types"]
     },
