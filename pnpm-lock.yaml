@@ -61,7 +61,7 @@ importers:
         version: 2.13.1(@types/react@19.1.10)(react@19.1.1)
       next:
         specifier: 15.5.2
-        version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sass@1.90.0)
+        version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sass@1.91.0)
       next-query-utils:
         specifier: ^1.1.0
         version: 1.4.3
@@ -106,8 +106,8 @@ importers:
         specifier: 15.5.2
         version: 15.5.2(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.41.0(eslint@9.33.0)(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.33.0))(eslint@9.33.0)(typescript@5.9.2)
       sass:
-        specifier: 1.90.0
-        version: 1.90.0
+        specifier: 1.91.0
+        version: 1.91.0
 
   packages/eslint-config:
     devDependencies:
@@ -3352,8 +3352,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  sass@1.90.0:
-    resolution: {integrity: sha512-9GUyuksjw70uNpb1MTYWsH9MQHOHY6kwfnkafC24+7aOMZn9+rVMBxRbLvw756mrBFbIsFg6Xw9IkR2Fnn3k+Q==}
+  sass@1.91.0:
+    resolution: {integrity: sha512-aFOZHGf+ur+bp1bCHZ+u8otKGh77ZtmFyXDo4tlYvT7PWql41Kwd8wdkPqhhT+h2879IVblcHFglIMofsFd1EA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -6997,7 +6997,7 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.15
 
-  next@15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sass@1.90.0):
+  next@15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sass@1.91.0):
     dependencies:
       '@next/env': 15.5.2
       '@swc/helpers': 0.5.15
@@ -7015,7 +7015,7 @@ snapshots:
       '@next/swc-linux-x64-musl': 15.5.2
       '@next/swc-win32-arm64-msvc': 15.5.2
       '@next/swc-win32-x64-msvc': 15.5.2
-      sass: 1.90.0
+      sass: 1.91.0
       sharp: 0.34.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -7540,7 +7540,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass@1.90.0:
+  sass@1.91.0:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.1.3
