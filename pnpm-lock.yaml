@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@types/node':
-      specifier: ^24.3.0
-      version: 24.3.0
+      specifier: ^24.3.1
+      version: 24.3.1
     '@types/react':
       specifier: ^19.1.12
       version: 19.1.12
@@ -89,7 +89,7 @@ importers:
         version: link:../../packages/typescript-config
       '@types/node':
         specifier: 'catalog:'
-        version: 24.3.0
+        version: 24.3.1
       '@types/react':
         specifier: 'catalog:'
         version: 19.1.12
@@ -226,10 +226,10 @@ importers:
         version: link:../typescript-config
       '@turbo/gen':
         specifier: ^2.5.1
-        version: 2.5.6(@types/node@24.3.0)(typescript@5.9.2)
+        version: 2.5.6(@types/node@24.3.1)(typescript@5.9.2)
       '@types/node':
         specifier: 'catalog:'
-        version: 24.3.0
+        version: 24.3.1
       '@types/react':
         specifier: 'catalog:'
         version: 19.1.12
@@ -271,10 +271,10 @@ importers:
         version: link:../typescript-config
       '@turbo/gen':
         specifier: ^2.5.1
-        version: 2.5.6(@types/node@24.3.0)(typescript@5.9.2)
+        version: 2.5.6(@types/node@24.3.1)(typescript@5.9.2)
       '@types/node':
         specifier: 'catalog:'
-        version: 24.3.0
+        version: 24.3.1
       '@types/react':
         specifier: 'catalog:'
         version: 19.1.12
@@ -1431,8 +1431,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@24.3.0':
-    resolution: {integrity: sha512-aPTXCrfwnDLj4VvXrm+UUCQjNEvJgNA8s5F1cvwQU+3KNltTOkBm1j30uNLyqqPNe7gE3KFzImYoZEfLhp4Yow==}
+  '@types/node@24.3.1':
+    resolution: {integrity: sha512-3vXmQDXy+woz+gnrTvuvNrPzekOi+Ds0ReMxw0LzBiK3a+1k0kQn9f2NWk+lgD4rJehFUmYy2gMhJ2ZI+7YP9g==}
 
   '@types/prismjs@1.26.5':
     resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
@@ -4923,7 +4923,7 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@turbo/gen@2.5.6(@types/node@24.3.0)(typescript@5.9.2)':
+  '@turbo/gen@2.5.6(@types/node@24.3.1)(typescript@5.9.2)':
     dependencies:
       '@turbo/workspaces': 2.5.6
       commander: 10.0.1
@@ -4933,7 +4933,7 @@ snapshots:
       node-plop: 0.26.3
       picocolors: 1.0.1
       proxy-agent: 6.5.0
-      ts-node: 10.9.2(@types/node@24.3.0)(typescript@5.9.2)
+      ts-node: 10.9.2(@types/node@24.3.1)(typescript@5.9.2)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -4975,7 +4975,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 24.3.0
+      '@types/node': 24.3.1
 
   '@types/hast@2.3.10':
     dependencies:
@@ -5006,7 +5006,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@24.3.0':
+  '@types/node@24.3.1':
     dependencies:
       undici-types: 7.10.0
 
@@ -5026,7 +5026,7 @@ snapshots:
 
   '@types/through@0.0.33':
     dependencies:
-      '@types/node': 24.3.0
+      '@types/node': 24.3.1
 
   '@types/tinycolor2@1.4.6': {}
 
@@ -7828,14 +7828,14 @@ snapshots:
     dependencies:
       typescript: 5.9.2
 
-  ts-node@10.9.2(@types/node@24.3.0)(typescript@5.9.2):
+  ts-node@10.9.2(@types/node@24.3.1)(typescript@5.9.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 24.3.0
+      '@types/node': 24.3.1
       acorn: 8.15.0
       acorn-walk: 8.3.4
       arg: 4.1.3
