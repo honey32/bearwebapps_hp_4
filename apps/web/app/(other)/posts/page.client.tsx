@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  type MouseEventHandler,
-  useCallback,
-  //@ts-expect-error ViewTransition is not defined
-  unstable_ViewTransition as ViewTransition,
-} from "react";
+import { type MouseEventHandler, useCallback, ViewTransition } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
