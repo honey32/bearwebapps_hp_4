@@ -16,6 +16,6 @@ jobs:
       - name: Setup AikidoSec/Safe-Chain
         run: |
           pnpm install -g @aikidosec/safe-chain@1.1.3
-          safe-chain setup
+          safe-chain setup-ci
       - run: pnpm install
       - run: pnpm run check
