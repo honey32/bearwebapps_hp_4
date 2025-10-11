@@ -25,6 +25,6 @@ export const POST = async (request: Request) => {
     return new Response("Invalid Signature", { status: 400 });
   }
 
-  revalidateTag(TAG_MICROCMS_POSTS);
+  revalidateTag(TAG_MICROCMS_POSTS, "max");
   return new Response("Success!", { status: 200 });
 };
