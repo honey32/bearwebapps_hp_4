@@ -1,5 +1,6 @@
 "use client";
 
+//@ts-expect-error ViewTransition is not defined
 import { unstable_ViewTransition as ViewTransition } from "react";
 import Image from "next/image";
 

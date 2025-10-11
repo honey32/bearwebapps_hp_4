@@ -3,6 +3,7 @@
 import {
   type MouseEventHandler,
   useCallback,
+  //@ts-expect-error ViewTransition is not defined
   unstable_ViewTransition as ViewTransition,
 } from "react";
 import Link from "next/link";
