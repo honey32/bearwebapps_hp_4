@@ -16,27 +16,6 @@ type HeadingData = {
 };
 
 function TocOnSide_Impl({ data }: Props) {
-  // スクロールに応じて現在読んでいる章を取得する
-  const [currentItem, setCurrentItem] = useState<string>();
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (!e.isIntersecting) continue;
-          setCurrentItem(e.target.id);
-        }
-      },
-      { rootMargin: "-20% 0% -60%" },
-    );
-
-    const targets = Array.from(document.querySelectorAll("h2,h3"));
-    targets.forEach((target) => target.id && observer.observe(target));
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <nav
       css={`
@@ -54,9 +33,11 @@ function TocOnSide_Impl({ data }: Props) {
       </div>
 
       <ul
+        // scroll-target-group / :target-current を使って、スクロール位置に基づいた目次項目の強調を実現している
         css={`
           margin-block-start: 16px;
           list-style: none;
+          scroll-target-group: auto;
         `}
       >
         {data.map((heading) => {
@@ -67,7 +48,6 @@ function TocOnSide_Impl({ data }: Props) {
             <li
               key={key}
               data-depth={heading.depth}
-              aria-current={currentItem === id ? "true" : "false"}
               css={`
                 padding: 4px 0;
                 margin-inline-start: 16px;
@@ -94,7 +74,7 @@ function TocOnSide_Impl({ data }: Props) {
                   }
                 }
 
-                &[aria-current="true"] {
+                &:has(a:target-current) {
                   color: var(--color-text-accent);
 
                   & > span:first-child {
