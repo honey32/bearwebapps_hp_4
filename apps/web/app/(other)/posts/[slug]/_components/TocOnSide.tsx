@@ -53,42 +53,27 @@ function TocOnSide_Impl({ data }: Props) {
                 margin-inline-start: 16px;
                 font-size: 0.9rem;
                 font-feature-settings: "palt", "kern";
+                color: var(--_text-color);
+                text-wrap: pretty;
+                word-break: auto-phrase;
 
                 display: grid;
                 grid-template-columns: max-content 1fr;
                 align-items: first baseline;
 
-                text-wrap: pretty;
-                word-break: auto-phrase;
+                --_text-color: var(--color-text-secondary);
+                --_mark-opacity: 0.3;
 
-                a:any-link {
-                  color: inherit;
+                &[data-depth="3"] > span:first-child {
+                  margin-inline-end: 24px;
+                  clip-path: circle(4px at 50% 50%);
                 }
-
-                color: var(--color-text-secondary);
-
-                &[data-depth="3"] {
-                  & > span:first-child {
-                    margin-inline-end: 24px;
-                    clip-path: circle(4px at 50% 50%);
-                  }
-                }
-
                 &:has(a:target-current) {
-                  color: var(--color-text-accent);
-
-                  & > span:first-child {
-                    opacity: 1;
-                    background-color: var(--color-text-accent);
-                  }
+                  --_text-color: var(--color-text-accent);
+                  --_mark-opacity: 1;
                 }
-
                 &:hover {
-                  color: var(--color-text);
-
-                  a {
-                    text-decoration: none;
-                  }
+                  --_text-color: var(--color-text);
                 }
               `}
             >
@@ -100,12 +85,23 @@ function TocOnSide_Impl({ data }: Props) {
                   margin-inline-end: 8px;
                   clip-path: circle(6px at 50% 50%);
 
-                  background-color: var(--color-text);
-                  opacity: 0.3;
+                  background-color: currentColor;
+                  opacity: var(--mark-opacity);
                 `}
               />
               {id ? (
-                <a href={`#${id}`}>{heading.value}</a>
+                <a
+                  href={`#${id}`}
+                  css={`
+                    &:any-link {
+                      /* 詳細度を上げてデフォルトに勝つため */
+                      color: inherit;
+                      text-decoration: none;
+                    }
+                  `}
+                >
+                  {heading.value}
+                </a>
               ) : (
                 <span>{heading.value}</span>
               )}
