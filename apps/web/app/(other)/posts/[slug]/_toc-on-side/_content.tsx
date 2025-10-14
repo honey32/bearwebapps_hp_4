@@ -1,7 +1,4 @@
-"use client";
-
-import { createPortal } from "react-dom";
-import { useEffect, useState } from "react";
+import { type FC } from "react";
 
 type Props = {
   data: HeadingData[];
@@ -15,7 +12,7 @@ type HeadingData = {
   };
 };
 
-function TocOnSide_Impl({ data }: Props) {
+export const TocOnSideContent: FC<Props> = ({ data }) => {
   return (
     <nav
       css={`
@@ -111,16 +108,4 @@ function TocOnSide_Impl({ data }: Props) {
       </ul>
     </nav>
   );
-}
-
-export default function TocOnSide(props: Props) {
-  const [el, setEl] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    setEl(document.getElementById("portal_toc_on_side"));
-  }, []);
-
-  if (!el) return null;
-
-  return createPortal(<TocOnSide_Impl {...props} />, el);
-}
+};
