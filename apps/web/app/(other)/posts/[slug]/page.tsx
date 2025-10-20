@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
@@ -7,8 +6,8 @@ import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
+import { TocOnSide } from "./_toc-on-side";
 import { PostHeader } from "./_post-header";
-import TocOnSideContainer from "./_components/TocOnSideContainer";
 import "@repo/post/styles/prism.scss";
 import Toc from "./_components/Toc";
 import { PostFooterImage } from "./_components/PostFooterImage";
@@ -66,9 +65,7 @@ export default async function PostDetailPage(
 
   return (
     <div>
-      <Suspense>
-        <TocOnSideContainer content={post.content} />
-      </Suspense>
+      <TocOnSide content={post.content} />
 
       <PostEyecatch src={post.image?.url} id={post.id} />
 

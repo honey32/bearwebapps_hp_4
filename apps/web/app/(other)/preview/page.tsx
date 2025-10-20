@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 
 import { getSingleQueryParam } from "next-query-utils";
@@ -7,8 +6,8 @@ import { bodyParser } from "@repo/post/body-parser";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
+import { TocOnSide } from "../posts/[slug]/_toc-on-side";
 import { PostHeader } from "../posts/[slug]/_post-header";
-import TocOnSideContainer from "../posts/[slug]/_components/TocOnSideContainer";
 import "@repo/post/styles/prism.scss";
 import Toc from "../posts/[slug]/_components/Toc";
 import { PostFooterImage } from "../posts/[slug]/_components/PostFooterImage";
@@ -40,9 +39,7 @@ export default async function Page(props: PageProps<"/preview">) {
 
   return (
     <div>
-      <Suspense>
-        <TocOnSideContainer content={post.content} />
-      </Suspense>
+      <TocOnSide content={post.content} />
 
       <main className={styles.main}>
         <PostEyecatch src={post.image?.url} id={slug} />

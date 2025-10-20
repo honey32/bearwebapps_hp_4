@@ -1,6 +1,9 @@
+import { type FC } from "react";
+
 import { tocParser } from "@repo/post/toc-parser";
 
-import TocOnSide from "./TocOnSide";
+import { Portal } from "./_portal";
+import { TocOnSideContent } from "./_content";
 
 type Props = {
   content: string;
@@ -14,12 +17,15 @@ type HeadingData = {
   };
 };
 
-export default async function TocOnSideContainer({ content }: Props) {
+export const TocOnSide: FC<Props> = async ({ content }) => {
   const toc = await tocParser.process(content);
-
   const headings = toc.data.headings as HeadingData[];
 
   if (headings.length === 0) return null;
 
-  return <TocOnSide data={headings} />;
-}
+  return (
+    <Portal htmlFor="portal_toc_on_side">
+      <TocOnSideContent data={headings} />
+    </Portal>
+  );
+};
