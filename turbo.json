@@ -8,6 +8,9 @@
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "web#build": {
+      "dependsOn": ["^build", "//#check-format:root", "check-types", "lint"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**"],
       "env": [
         "MICROCMS_API_KEY",
         "MICROCMS_API_BASE_URL",
