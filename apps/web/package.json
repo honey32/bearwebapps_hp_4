@@ -16,7 +16,7 @@
     "@repo/ui": "workspace:*",
     "clsx": "^2.1.1",
     "jotai": "^2.15.1",
-    "next": "16.0.1",
+    "next": "16.0.3",
     "next-query-utils": "^1.1.0",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -32,7 +32,7 @@
     "@types/react-dom": "catalog:",
     "csstype": "3.2.0",
     "eslint": "catalog:",
-    "eslint-config-next": "16.0.1",
+    "eslint-config-next": "16.0.3",
     "sass": "1.94.0"
   }
 }
