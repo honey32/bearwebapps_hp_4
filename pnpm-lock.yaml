@@ -97,8 +97,8 @@ importers:
         specifier: 'catalog:'
         version: 19.2.2(@types/react@19.2.2)
       csstype:
-        specifier: 3.1.3
-        version: 3.1.3
+        specifier: 3.2.0
+        version: 3.2.0
       eslint:
         specifier: 'catalog:'
         version: 9.39.1
@@ -2058,8 +2058,8 @@ packages:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
-  csstype@3.1.3:
-    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+  csstype@3.2.0:
+    resolution: {integrity: sha512-si++xzRAY9iPp60roQiFta7OFbhrgvcthrhlNAGeQptSY25uJjkfUV8OArC3KLocB8JT8ohz+qgxWCmz8RhjIg==}
 
   damerau-levenshtein@1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
@@ -5398,7 +5398,7 @@ snapshots:
 
   '@types/react@19.2.2':
     dependencies:
-      csstype: 3.1.3
+      csstype: 3.2.0
 
   '@types/remark-heading-id@1.0.0':
     dependencies:
@@ -5986,7 +5986,7 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  csstype@3.1.3: {}
+  csstype@3.2.0: {}
 
   damerau-levenshtein@1.0.8: {}
 
