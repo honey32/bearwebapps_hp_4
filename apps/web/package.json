@@ -33,6 +33,6 @@
     "csstype": "3.2.3",
     "eslint": "catalog:",
     "eslint-config-next": "16.0.3",
-    "sass": "1.94.0"
+    "sass": "1.94.2"
   }
 }
