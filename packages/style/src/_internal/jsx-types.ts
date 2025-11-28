@@ -13,8 +13,8 @@ export namespace StyleJSX {
   export type LibraryManagedAttributes<C, P> =
     React.JSX.LibraryManagedAttributes<C, P>;
   export interface IntrinsicAttributes extends React.JSX.IntrinsicAttributes {}
-  export interface IntrinsicClassAttributes<T>
-    extends React.JSX.IntrinsicClassAttributes<T> {}
+  export interface IntrinsicClassAttributes<T> extends React.JSX
+    .IntrinsicClassAttributes<T> {}
 
   export type IntrinsicElements = {
     [key in keyof React.JSX.IntrinsicElements]: React.JSX.IntrinsicElements[key] & {
