@@ -7,12 +7,12 @@ import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
 import { TocOnSide } from "../_post-detail/toc-on-side";
-import { PostHeader } from "../_post-detail/post-header";
 import { Toc } from "../_post-detail/toc";
+import { SpColorModeSwitchWrapper } from "../_post-detail/sp-color-mode-switch-wrapper";
+import { PostMain } from "../_post-detail/post-main";
+import { PostHeader } from "../_post-detail/post-header";
 import { PostFooterImage } from "../_post-detail/post-footer-image";
 import { PostEyecatch } from "../_post-detail/post-eyecatch";
-import { PostMain } from "../_post-detail/post-main";
-import { SpColorModeSwitchWrapper } from "../_post-detail/sp-color-mode-switch-wrapper";
 import { PostContent } from "../_post-detail/post-content";
 
 const fetchPost = (params: { slug: string; draftKey: string }) => {
