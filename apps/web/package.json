@@ -32,7 +32,6 @@
     "@types/react-dom": "catalog:",
     "csstype": "3.2.3",
     "eslint": "catalog:",
-    "eslint-config-next": "16.0.5",
-    "sass": "1.94.2"
+    "eslint-config-next": "16.0.5"
   }
 }

@@ -1,8 +1,9 @@
 import { styled } from "@repo/style/styled";
-
-import "@repo/post/styles/prism.scss";
+import { prismStyle } from "@repo/post/styles/prism-style.ts";
 
 export const PostContent = styled("div")`
+  ${prismStyle}
+
   :where(p) {
     word-break: auto-phrase;
     text-wrap: pretty;
