@@ -1,5 +1,7 @@
 import { styled } from "@repo/style/styled";
 
+import "@repo/post/styles/prism.scss";
+
 export const PostContent = styled("div")`
   :where(p) {
     word-break: auto-phrase;

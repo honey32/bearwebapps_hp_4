@@ -6,7 +6,6 @@ import { bodyParser } from "@repo/post/body-parser";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
-import "@repo/post/styles/prism.scss";
 import { TocOnSide } from "../_post-detail/toc-on-side";
 import { PostHeader } from "../_post-detail/post-header";
 import { Toc } from "../_post-detail/toc";

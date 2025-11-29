@@ -6,7 +6,6 @@ import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
-import "@repo/post/styles/prism.scss";
 import { PostContent } from "../../_post-detail/post-content";
 import { SpColorModeSwitchWrapper } from "../../_post-detail/sp-color-mode-switch-wrapper";
 import { PostMain } from "../../_post-detail/post-main";
