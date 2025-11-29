@@ -6,14 +6,14 @@ import { bodyParser } from "@repo/post/body-parser";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
-import { TocOnSide } from "../posts/[slug]/_toc-on-side";
-import { PostHeader } from "../posts/[slug]/_post-header";
-import "@repo/post/styles/prism.scss";
-import Toc from "../posts/[slug]/_components/Toc";
-import { PostFooterImage } from "../posts/[slug]/_components/PostFooterImage";
-import { PostEyecatch } from "../posts/[slug]/_components/PostEyecatch";
-
-import styles from "../posts/[slug]/page.module.scss";
+import { TocOnSide } from "../_post-detail/toc-on-side";
+import { Toc } from "../_post-detail/toc";
+import { SpColorModeSwitchWrapper } from "../_post-detail/sp-color-mode-switch-wrapper";
+import { PostMain } from "../_post-detail/post-main";
+import { PostHeader } from "../_post-detail/post-header";
+import { PostFooterImage } from "../_post-detail/post-footer-image";
+import { PostEyecatch } from "../_post-detail/post-eyecatch";
+import { PostContent } from "../_post-detail/post-content";
 
 const fetchPost = (params: { slug: string; draftKey: string }) => {
   return microCmsRepository.getPreviewPost(params).catch(() => {
@@ -41,7 +41,7 @@ export default async function Page(props: PageProps<"/preview">) {
     <div>
       <TocOnSide content={post.content} />
 
-      <main className={styles.main}>
+      <PostMain>
         <PostEyecatch src={post.image?.url} id={slug} />
 
         <PostHeader
@@ -51,17 +51,17 @@ export default async function Page(props: PageProps<"/preview">) {
           tags={post.tags.map((tag) => tag.name)}
         />
 
-        <div className={styles.colorModeSwitch}>
+        <SpColorModeSwitchWrapper>
           <ColorModeSwitch />
-        </div>
+        </SpColorModeSwitchWrapper>
 
-        <div className={styles.content}>
+        <PostContent>
           <Toc content={post.content} />
           <div>{parsedContent.result}</div>
-        </div>
+        </PostContent>
 
         <PostFooterImage src={post.image?.url} />
-      </main>
+      </PostMain>
     </div>
   );
 }

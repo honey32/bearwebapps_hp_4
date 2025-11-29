@@ -1,170 +1,109 @@
-.main {
-  background-color: var(--color-bg);
-  contain: content;
+import { styled } from "@repo/style/styled";
+import { prismStyle } from "@repo/post/styles/prism-style.ts";
 
-  // シート内側左右の余白
-  --margin-h: 16px;
+export const PostContent = styled("div")`
+  ${prismStyle}
 
-  margin-block-start: 32px;
-  border-radius: 16px;
-
-  @media screen and (min-width: 960px) {
-    margin-inline: 32px;
-    border-radius: 8px;
-
-    --margin-h: 32px;
-  }
-}
-
-.nav {
-  padding: 16px;
-  padding-block-start: 32px;
-}
-
-.colorModeSwitch {
-  margin-block: 2rem;
-  display: grid;
-  align-items: center;
-
-  @media screen and (min-width: 960px) {
-    display: none;
-  }
-}
-
-.content {
   :where(p) {
     word-break: auto-phrase;
     text-wrap: pretty;
   }
-
   :where(h1, h2, h3, h4, h5, h6) {
     word-break: auto-phrase;
     text-wrap: pretty;
   }
-
   :where(p, ul, ol, h1, h2, h3, h4) {
     margin-block: var(--_typo-space, 1rem);
     margin-inline: var(--margin-h);
   }
-
   :where(strong) {
     color: var(--color-text-semi-accent);
   }
-
   :where(h1, h2, h3, h4) {
     font-feature-settings: "palt", "kern";
     letter-spacing: 0.1rem;
     line-height: 1.2;
-
     color: var(--color-text-accent);
   }
-
   :where(h2) {
     margin: 3rem 0 1rem;
     padding: 0.9rem 16px 1rem;
-
     border-inline-start: 8px solid var(--color-text-accent-adornment);
-
     font-size: 1.5rem;
     line-height: 1.2;
-
     @media screen and (min-width: 960px) {
       padding-inline: calc(var(--margin-h) - 8px);
     }
   }
-
   :where(h3) {
     margin-block-start: 2rem;
     line-height: 1.5;
   }
-
   :where(ul, ol) {
     margin-inline-start: calc(16px + 2rem);
-
     :where(ul, ol) {
       margin-block: 0;
       margin-inline-start: 1rem;
     }
   }
-
   :where(p, ul, ol) {
     line-height: 1.8;
     font-feature-settings: "pwid";
   }
-
   :where(hr) {
     margin: 2rem 64px;
     border: none;
     height: 1px;
     background-color: var(--color-border);
   }
-
   :where(p code) {
     background-color: var(--color-bg-card);
     padding: 4px 8px 2px;
     margin-inline: 4px;
     border-radius: 4px;
-
     background-color: oklch(from cyan 0.2 0.2 h);
   }
-
   :where(pre:has(code)) {
     padding: 16px 16px;
     overflow-x: auto;
     max-width: 100%;
-
     line-height: 1.5;
     color: oklch(from white 0.8 c h);
     background-color: var(--color-bg-codeblock);
-
     @media (prefers-color-scheme: dark) {
       border-top: 1px solid var(--color-border);
       border-bottom: 1px solid var(--color-border);
     }
   }
-
   :where(blockquote) {
-    // margin 相殺を回避するため
     display: block flow-root;
-
     margin-block: 1.5rem;
     padding: 0.5rem 8px;
-
     font-size: 0.9rem;
     --_typo-space: 0.9rem;
     color: var(--color-accent2-fore);
-
     border-inline-start: 8px solid var(--color-accent2);
     background-color: var(--color-accent2-weak);
-
     @media screen and (min-width: 960px) {
       margin-inline: calc(var(--margin-h) - 8px);
     }
-
-    // この要素の中には margin-h の広がりを伝播させない
     & > :where(*) {
       --margin-h: 16px;
     }
   }
-
   :where(:global(.callout_note)) {
     margin-block: 1.5rem;
     margin-inline: var(--margin-h);
-
     font-size: 0.9rem;
-
     border-radius: 8px;
     color: var(--color-accent-fore);
     border: 1px solid var(--color-accent-border);
     background-color: var(--color-accent);
-
     :where(strong) {
       color: inherit;
     }
-
-    // この要素の中には margin-h の広がりを伝播させない
     & > :where(*) {
       --margin-h: 16px;
     }
   }
-}
+`;

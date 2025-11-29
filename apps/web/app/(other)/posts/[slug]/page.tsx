@@ -6,15 +6,15 @@ import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
-import { TocOnSide } from "./_toc-on-side";
-import { PostHeader } from "./_post-header";
-import "@repo/post/styles/prism.scss";
-import Toc from "./_components/Toc";
-import { PostFooterImage } from "./_components/PostFooterImage";
-import { PostEyecatch } from "./_components/PostEyecatch";
-import { PostAdjacency } from "./_components/PostAdjacency";
-
-import styles from "./page.module.scss";
+import { TocOnSide } from "../../_post-detail/toc-on-side";
+import { Toc } from "../../_post-detail/toc";
+import { SpColorModeSwitchWrapper } from "../../_post-detail/sp-color-mode-switch-wrapper";
+import { PostMain } from "../../_post-detail/post-main";
+import { PostHeader } from "../../_post-detail/post-header";
+import { PostFooterImage } from "../../_post-detail/post-footer-image";
+import { PostEyecatch } from "../../_post-detail/post-eyecatch";
+import { PostContent } from "../../_post-detail/post-content";
+import { PostAdjacency } from "../../_post-detail/post-adjacency";
 
 type Params = {
   slug: string;
@@ -69,9 +69,7 @@ export default async function PostDetailPage(
 
       <PostEyecatch src={post.image?.url} id={post.id} />
 
-      <main
-        className={styles.main}
-        // Sass が starting-style を認識してくれないので、この部分のみ自作 css-in-js で対応
+      <PostMain
         css={`
           opacity: 1;
           transition: opacity 0.5s 0.2s ease-out;
@@ -87,18 +85,23 @@ export default async function PostDetailPage(
           tags={post.tags.map((tag) => tag.name)}
         />
 
-        <div className={styles.colorModeSwitch}>
+        <SpColorModeSwitchWrapper>
           <ColorModeSwitch />
-        </div>
+        </SpColorModeSwitchWrapper>
 
-        <div className={styles.content}>
+        <PostContent>
           <Toc content={post.content} />
           <div>{parsedContent.result}</div>
-        </div>
+        </PostContent>
 
         <PostFooterImage src={post.image?.url} />
-      </main>
-      <div className={styles.nav}>
+      </PostMain>
+      <div
+        css={`
+          padding: 16px;
+          padding-block-start: 32px;
+        `}
+      >
         <PostAdjacency next={post.next} prev={post.prev} />
       </div>
     </div>

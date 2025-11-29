@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 import type React from "react";
 
+declare module "react" {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface HTMLAttributes<T> {
+    css?: string;
+  }
+  // 標準の要素および、それを拡張したコンポーネントには css プロパティを追加する
+}
+
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace StyleJSX {
   export type ElementType = React.JSX.ElementType;
@@ -16,9 +24,5 @@ export namespace StyleJSX {
   export interface IntrinsicClassAttributes<T> extends React.JSX
     .IntrinsicClassAttributes<T> {}
 
-  export type IntrinsicElements = {
-    [key in keyof React.JSX.IntrinsicElements]: React.JSX.IntrinsicElements[key] & {
-      css?: string;
-    };
-  };
+  export type IntrinsicElements = React.JSX.IntrinsicElements;
 }

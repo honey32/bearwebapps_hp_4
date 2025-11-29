@@ -6,7 +6,7 @@
   "exports": {
     "./body-parser": "./src/body-parser.ts",
     "./toc-parser": "./src/toc-parser.ts",
-    "./styles/prism.scss": "./src/prism.scss"
+    "./styles/prism-style.ts": "./src/prism-style.ts"
   },
   "imports": {
     "#src/*.ts": "./src/*.ts",
