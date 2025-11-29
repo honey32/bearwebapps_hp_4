@@ -12,8 +12,11 @@ import "@repo/post/styles/prism.scss";
 import Toc from "../posts/[slug]/_components/Toc";
 import { PostFooterImage } from "../posts/[slug]/_components/PostFooterImage";
 import { PostEyecatch } from "../posts/[slug]/_components/PostEyecatch";
-
-import styles from "../posts/[slug]/page.module.scss";
+import {
+  postMainStyle,
+  colorModeSwitchStyle,
+  postContentStyle,
+} from "../_post-styles";
 
 const fetchPost = (params: { slug: string; draftKey: string }) => {
   return microCmsRepository.getPreviewPost(params).catch(() => {
@@ -41,7 +44,7 @@ export default async function Page(props: PageProps<"/preview">) {
     <div>
       <TocOnSide content={post.content} />
 
-      <main className={styles.main}>
+      <main css={postMainStyle}>
         <PostEyecatch src={post.image?.url} id={slug} />
 
         <PostHeader
@@ -51,11 +54,11 @@ export default async function Page(props: PageProps<"/preview">) {
           tags={post.tags.map((tag) => tag.name)}
         />
 
-        <div className={styles.colorModeSwitch}>
+        <div css={colorModeSwitchStyle}>
           <ColorModeSwitch />
         </div>
 
-        <div className={styles.content}>
+        <div css={postContentStyle}>
           <Toc content={post.content} />
           <div>{parsedContent.result}</div>
         </div>

@@ -5,6 +5,11 @@ import { bodyParser } from "@repo/post/body-parser";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
+import {
+  postMainStyle,
+  colorModeSwitchStyle,
+  postContentStyle,
+} from "../../_post-styles";
 
 import { TocOnSide } from "./_toc-on-side";
 import { PostHeader } from "./_post-header";
@@ -13,8 +18,6 @@ import Toc from "./_components/Toc";
 import { PostFooterImage } from "./_components/PostFooterImage";
 import { PostEyecatch } from "./_components/PostEyecatch";
 import { PostAdjacency } from "./_components/PostAdjacency";
-
-import styles from "./page.module.scss";
 
 type Params = {
   slug: string;
@@ -70,9 +73,8 @@ export default async function PostDetailPage(
       <PostEyecatch src={post.image?.url} id={post.id} />
 
       <main
-        className={styles.main}
-        // Sass が starting-style を認識してくれないので、この部分のみ自作 css-in-js で対応
         css={`
+          ${postMainStyle}
           opacity: 1;
           transition: opacity 0.5s 0.2s ease-out;
           @starting-style {
@@ -87,18 +89,23 @@ export default async function PostDetailPage(
           tags={post.tags.map((tag) => tag.name)}
         />
 
-        <div className={styles.colorModeSwitch}>
+        <div css={colorModeSwitchStyle}>
           <ColorModeSwitch />
         </div>
 
-        <div className={styles.content}>
+        <div css={postContentStyle}>
           <Toc content={post.content} />
           <div>{parsedContent.result}</div>
         </div>
 
         <PostFooterImage src={post.image?.url} />
       </main>
-      <div className={styles.nav}>
+      <div
+        css={`
+          padding: 16px;
+          padding-block-start: 32px;
+        `}
+      >
         <PostAdjacency next={post.next} prev={post.prev} />
       </div>
     </div>
