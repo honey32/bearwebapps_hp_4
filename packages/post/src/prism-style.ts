@@ -1,6 +1,6 @@
 const css = String.raw;
 export const prismStyle = css`
-  .code-highlight {
+  & .code-highlight {
     /* 行単位とハイライト等 */
     /* ref: https://github.com/timlrx/rehype-prism-plus#styling */
     float: left;
@@ -10,7 +10,7 @@ export const prismStyle = css`
 
     --color-text-line-number: oklch(from white 0.5 c h);
 
-    .code-line {
+    & .code-line {
       display: block;
       padding-left: 16px;
       padding-right: 16px;
@@ -54,31 +54,31 @@ export const prismStyle = css`
     }
 
     /* ここから、トークンの色指定 */
-    .token.comment {
+    & .token.comment {
       color: oklch(from green 0.55 0.1 h);
     }
 
-    .token.string {
+    & .token.string {
       color: oklch(from orange 0.7 0.25 h);
     }
 
-    .token.keyword {
+    & .token.keyword {
       color: oklch(from violet 0.7 0.25 h);
     }
 
-    .token.number {
+    & .token.number {
       color: oklch(from yellowgreen 0.8 0.25 h);
     }
 
-    .token.function {
+    & .token.function {
       color: oklch(from yellow 0.85 0.25 h);
     }
 
-    .token.maybe-class-name {
+    & .token.maybe-class-name {
       color: oklch(from green 0.75 0.25 h);
     }
 
-    .token.tag > *:not(.script) {
+    & .token.tag > *:not(.script) {
       color: oklch(from yellow 0.8 0.12 h);
     }
   }
