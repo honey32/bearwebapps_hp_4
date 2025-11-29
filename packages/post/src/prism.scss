@@ -15,48 +15,39 @@
     margin-left: -16px;
     margin-right: -16px;
     border-left: 4px solid rgba(0, 0, 0, 0);
-    /* Set placeholder for highlight accent border color to transparent */
 
-    @mixin line-number {
-      &.line-number::before {
-        @content;
-      }
-    }
+    --c-color-text: var(--color-text-line-number);
+    --c-color-text-emphasized: oklch(
+      from var(--color-text-line-number) 0.9 c h
+    );
 
-    @include line-number {
+    --c-color-bg: transparent;
+    background-color: var(--c-color-bg);
+
+    &.line-number::before {
       display: inline-block;
       width: 1rem;
       text-align: right;
       margin-right: 16px;
       margin-left: -8px;
-      color: var(--color-text-line-number);
-      /* Line number color */
+      color: var(--c-color-text);
       content: attr(line);
     }
 
     &.deleted {
-      background-color: oklch(from red l c h / 0.2);
-
-      @include line-number {
-        color: oklch(from var(--color-text-line-number) 0.9 c h);
-      }
+      --c-color-text: var(--c-color-text-emphasized);
+      --c-color-bg: oklch(from red l c h / 0.2);
     }
 
     &.inserted {
-      background-color: oklch(from green l c h / 0.2);
-
-      @include line-number {
-        color: oklch(from var(--color-text-line-number) 0.9 c h);
-      }
+      --c-color-text: var(--c-color-text-emphasized);
+      --c-color-bg: oklch(from green l c h / 0.2);
     }
 
     &.highlight-line {
-      background-color: oklch(from cyan l c h / 0.1);
-      border-left: 4px solid cyan;
-
-      @include line-number {
-        color: oklch(from var(--color-text-line-number) 0.9 c h);
-      }
+      --c-color-text: var(--c-color-text-emphasized);
+      --c-color-bg: oklch(from cyan l c h / 0.1);
+      border-color: cyan;
     }
   }
 
