@@ -9,9 +9,9 @@ import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 import { TocOnSide } from "../posts/[slug]/_toc-on-side";
 import { PostHeader } from "../posts/[slug]/_post-header";
 import "@repo/post/styles/prism.scss";
-import Toc from "../posts/[slug]/_components/Toc";
-import { PostFooterImage } from "../posts/[slug]/_components/PostFooterImage";
-import { PostEyecatch } from "../posts/[slug]/_components/PostEyecatch";
+import { Toc } from "../posts/[slug]/_toc";
+import { PostFooterImage } from "../posts/[slug]/_post-footer-image";
+import { PostEyecatch } from "../posts/[slug]/_post-eyecatch";
 import {
   postMainStyle,
   colorModeSwitchStyle,

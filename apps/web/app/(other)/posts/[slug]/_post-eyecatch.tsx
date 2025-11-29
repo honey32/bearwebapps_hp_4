@@ -1,5 +1,6 @@
 "use client";
 
+import { type FC } from "react";
 import { ViewTransition } from "react";
 import Image from "next/image";
 
@@ -10,7 +11,7 @@ type Props = {
   id: string;
 };
 
-export function PostEyecatch({ src, id }: Props) {
+export const PostEyecatch: FC<Props> = ({ src, id }) => {
   if (!src) return undefined;
   return (
     <div
@@ -62,4 +63,4 @@ export function PostEyecatch({ src, id }: Props) {
       </ViewTransition>
     </div>
   );
-}
+};

@@ -14,10 +14,10 @@ import {
 import { TocOnSide } from "./_toc-on-side";
 import { PostHeader } from "./_post-header";
 import "@repo/post/styles/prism.scss";
-import Toc from "./_components/Toc";
-import { PostFooterImage } from "./_components/PostFooterImage";
-import { PostEyecatch } from "./_components/PostEyecatch";
-import { PostAdjacency } from "./_components/PostAdjacency";
+import { Toc } from "./_toc";
+import { PostFooterImage } from "./_post-footer-image";
+import { PostEyecatch } from "./_post-eyecatch";
+import { PostAdjacency } from "./_post-adjacency";
 
 type Params = {
   slug: string;

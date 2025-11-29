@@ -1,5 +1,6 @@
 "use client";
 
+import { type FC } from "react";
 import Image from "next/image";
 
 import { microCmsImageLoader } from "@/app/_repositories/posts/microCmsImageLoader";
@@ -8,7 +9,7 @@ type Props = {
   src?: string;
 };
 
-export function PostFooterImage({ src }: Props) {
+export const PostFooterImage: FC<Props> = ({ src }) => {
   if (!src) return undefined;
 
   return (
@@ -60,4 +61,4 @@ export function PostFooterImage({ src }: Props) {
       />
     </div>
   );
-}
+};

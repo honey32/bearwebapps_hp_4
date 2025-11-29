@@ -12,7 +12,7 @@ type HeadingData = {
   };
 };
 
-export default async function Toc({ content }: Props) {
+export const Toc = async ({ content }: Props) => {
   const toc = await tocParser.process(content);
 
   const headings = toc.data.headings as HeadingData[];
@@ -89,4 +89,4 @@ export default async function Toc({ content }: Props) {
       </div>
     </nav>
   );
-}
+};

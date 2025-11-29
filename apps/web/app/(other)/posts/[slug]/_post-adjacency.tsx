@@ -1,3 +1,4 @@
+import { type FC } from "react";
 import Link from "next/link";
 
 import { styled } from "@repo/style/styled";
@@ -32,7 +33,7 @@ const Tick = styled("div")`
   }
 `;
 
-export function PostAdjacency({ next, prev }: Props) {
+export const PostAdjacency: FC<Props> = ({ next, prev }) => {
   return (
     <nav
       css={`
@@ -60,4 +61,4 @@ export function PostAdjacency({ next, prev }: Props) {
       )}
     </nav>
   );
-}
+};
