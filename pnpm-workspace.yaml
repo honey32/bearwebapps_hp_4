@@ -1,14 +1,22 @@
 packages:
   - apps/*
   - packages/*
-onlyBuiltDependencies:
-  - core-js-pure
-  - sharp
+
 catalog:
+  '@types/node': ^24.10.1
+  '@types/react': ^19.2.7
+  '@types/react-dom': ^19.2.3
   eslint: ^9.39.1
   react: ^19.2.0
   react-dom: ^19.2.0
-  "@types/react": ^19.2.7
-  "@types/react-dom": ^19.2.3
-  "@types/node": ^24.10.1
   typescript: ^5.9.3
+
+onlyBuiltDependencies:
+  - core-js-pure
+  - sharp
+
+overrides:
+  brace-expansion@>=1.0.0 <=1.1.11: '>=1.1.12'
+  brace-expansion@>=2.0.0 <=2.0.1: '>=2.0.2'
+  js-yaml@>=4.0.0 <4.1.1: '>=4.1.1'
+  tmp@<=0.2.3: '>=0.2.4'
