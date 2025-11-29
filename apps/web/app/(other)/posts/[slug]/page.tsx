@@ -5,19 +5,17 @@ import { bodyParser } from "@repo/post/body-parser";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
-import {
-  postMainStyle,
-  colorModeSwitchStyle,
-  postContentStyle,
-} from "../../_post-styles";
 
-import { TocOnSide } from "./_toc-on-side";
-import { PostHeader } from "./_post-header";
 import "@repo/post/styles/prism.scss";
-import { Toc } from "./_toc";
-import { PostFooterImage } from "./_post-footer-image";
-import { PostEyecatch } from "./_post-eyecatch";
-import { PostAdjacency } from "./_post-adjacency";
+import { PostContent } from "../../_post-detail/post-content";
+import { SpColorModeSwitchWrapper } from "../../_post-detail/sp-color-mode-switch-wrapper";
+import { PostMain } from "../../_post-detail/post-main";
+import { TocOnSide } from "../../_post-detail/toc-on-side";
+import { PostHeader } from "../../_post-detail/post-header";
+import { Toc } from "../../_post-detail/toc";
+import { PostFooterImage } from "../../_post-detail/post-footer-image";
+import { PostEyecatch } from "../../_post-detail/post-eyecatch";
+import { PostAdjacency } from "../../_post-detail/post-adjacency";
 
 type Params = {
   slug: string;
@@ -72,9 +70,8 @@ export default async function PostDetailPage(
 
       <PostEyecatch src={post.image?.url} id={post.id} />
 
-      <main
+      <PostMain
         css={`
-          ${postMainStyle}
           opacity: 1;
           transition: opacity 0.5s 0.2s ease-out;
           @starting-style {
@@ -89,17 +86,17 @@ export default async function PostDetailPage(
           tags={post.tags.map((tag) => tag.name)}
         />
 
-        <div css={colorModeSwitchStyle}>
+        <SpColorModeSwitchWrapper>
           <ColorModeSwitch />
-        </div>
+        </SpColorModeSwitchWrapper>
 
-        <div css={postContentStyle}>
+        <PostContent>
           <Toc content={post.content} />
           <div>{parsedContent.result}</div>
-        </div>
+        </PostContent>
 
         <PostFooterImage src={post.image?.url} />
-      </main>
+      </PostMain>
       <div
         css={`
           padding: 16px;

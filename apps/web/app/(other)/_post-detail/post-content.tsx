@@ -1,31 +1,6 @@
-const css = String.raw;
+import { styled } from "@repo/style/styled";
 
-// 投稿詳細ページのメインコンテナ
-export const postMainStyle = css`
-  background-color: var(--color-bg);
-  contain: content;
-  --margin-h: 16px;
-  margin-block-start: 32px;
-  border-radius: 16px;
-  @media screen and (min-width: 960px) {
-    margin-inline: 32px;
-    border-radius: 8px;
-    --margin-h: 32px;
-  }
-`;
-
-// カラーモードスイッチのスタイル
-export const colorModeSwitchStyle = css`
-  margin-block: 2rem;
-  display: grid;
-  align-items: center;
-  @media screen and (min-width: 960px) {
-    display: none;
-  }
-`;
-
-// 投稿コンテンツのスタイル
-export const postContentStyle = css`
+export const PostContent = styled("div")`
   :where(p) {
     word-break: auto-phrase;
     text-wrap: pretty;
