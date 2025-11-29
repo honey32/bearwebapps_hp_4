@@ -9,6 +9,9 @@ export const prismStyle = css`
     /* 2 */
 
     --color-text-line-number: oklch(from white 0.5 c h);
+    --color-text-line-number-strong: oklch(
+      from var(--color-text-line-number) 0.9 c h
+    );
 
     & .code-line {
       display: block;
@@ -18,13 +21,9 @@ export const prismStyle = css`
       margin-right: -16px;
       border-left: 4px solid rgba(0, 0, 0, 0);
 
-      --c-color-text: var(--color-text-line-number);
-      --c-color-text-emphasized: oklch(
-        from var(--color-text-line-number) 0.9 c h
-      );
-
-      --c-color-bg: transparent;
-      background-color: var(--c-color-bg);
+      --c-color-line-number-text: var(--color-text-line-number);
+      --c-color-line-bg: transparent;
+      background-color: var(--c-color-line-bg);
 
       &.line-number::before {
         display: inline-block;
@@ -32,23 +31,23 @@ export const prismStyle = css`
         text-align: right;
         margin-right: 16px;
         margin-left: -8px;
-        color: var(--c-color-text);
+        color: var(--c-color-line-number-text);
         content: attr(line);
       }
 
       &.deleted {
-        --c-color-text: var(--c-color-text-emphasized);
-        --c-color-bg: oklch(from red l c h / 0.2);
+        --c-color-line-number-text: var(--color-text-line-number-strong);
+        --c-color-line-bg: oklch(from red l c h / 0.2);
       }
 
       &.inserted {
-        --c-color-text: var(--c-color-text-emphasized);
-        --c-color-bg: oklch(from green l c h / 0.2);
+        --c-color-line-number-text: var(--color-text-line-number-strong);
+        --c-color-line-bg: oklch(from green l c h / 0.2);
       }
 
       &.highlight-line {
-        --c-color-text: var(--c-color-text-emphasized);
-        --c-color-bg: oklch(from cyan l c h / 0.1);
+        --c-color-line-number-text: var(--color-text-line-number-strong);
+        --c-color-line-bg: oklch(from cyan l c h / 0.1);
         border-color: cyan;
       }
     }
