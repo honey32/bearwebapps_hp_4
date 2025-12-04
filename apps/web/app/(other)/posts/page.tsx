@@ -5,6 +5,8 @@ import { getSingleQueryParam } from "next-query-utils";
 import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 
+import { BlogPseudoLayout } from "../_blog-pseudo-layout";
+
 import PostsIndexPageClient from "./page.client";
 
 export const metadata: Metadata = {
@@ -40,6 +42,8 @@ export default async function PostsIndexPage(props: PageProps<"/posts">) {
   })();
 
   return (
-    <PostsIndexPageClient tag={tag} summary={summary} contents={contents} />
+    <BlogPseudoLayout>
+      <PostsIndexPageClient tag={tag} summary={summary} contents={contents} />
+    </BlogPseudoLayout>
   );
 }

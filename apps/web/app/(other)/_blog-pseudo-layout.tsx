@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Activity, FC, ReactNode, ViewTransition } from "react";
 import Image from "next/image";
 
 import { myProfile } from "@/app/_my_profile/myProfile";
@@ -6,9 +6,22 @@ import { font_poppins } from "@/app/_common/fonts";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 import SectionRecentPosts from "@/app/(home)/SectionRecentPosts";
 
-import Layout_InvisibleOnRoot from "./Layout_InvisibleOnRoot";
+const transitionNames = {
+  toc: "blog-pseudo-layout-toc",
+  recentPosts: "blog-pseudo-layout-recent-posts",
+};
 
-export default function Layout({ children }: LayoutProps<"/posts">) {
+type Props = {
+  children: ReactNode;
+  showRecentPosts?: boolean | undefined | null;
+  tocElement?: ReactNode | undefined | null;
+};
+
+export const BlogPseudoLayout: FC<Props> = ({
+  children,
+  showRecentPosts = false,
+  tocElement,
+}) => {
   return (
     <div
       css={`
@@ -105,25 +118,27 @@ export default function Layout({ children }: LayoutProps<"/posts">) {
             top: 120px;
           `}
         >
-          <div
-            id="portal_toc_on_side"
-            css={`
-              display: none;
-              @media screen and (min-width: 960px) {
-                display: block;
-                margin-bottom: 16px;
-              }
-            `}
-          />
+          <ViewTransition name={transitionNames.toc}>
+            <div
+              css={`
+                display: none;
+                @media screen and (min-width: 960px) {
+                  display: block;
+                  margin-bottom: 16px;
+                }
+              `}
+            >
+              {tocElement}
+            </div>
+          </ViewTransition>
 
-          {/* 2-2 最新の投稿 */}
-          <Layout_InvisibleOnRoot>
-            <Suspense>
+          <Activity mode={showRecentPosts ? "visible" : "hidden"}>
+            <ViewTransition name={transitionNames.recentPosts}>
               <SectionRecentPosts />
-            </Suspense>
-          </Layout_InvisibleOnRoot>
+            </ViewTransition>
+          </Activity>
         </div>
       </aside>
     </div>
   );
-}
+};
