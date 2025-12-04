@@ -15,6 +15,7 @@ import { PostFooterImage } from "../../_post-detail/post-footer-image";
 import { PostEyecatch } from "../../_post-detail/post-eyecatch";
 import { PostContent } from "../../_post-detail/post-content";
 import { PostAdjacency } from "../../_post-detail/post-adjacency";
+import { BlogPseudoLayout } from "../../_blog-pseudo-layout";
 
 type Params = {
   slug: string;
@@ -64,46 +65,49 @@ export default async function PostDetailPage(
   const parsedContent = await bodyParser.process(post.content);
 
   return (
-    <div>
-      <TocOnSide content={post.content} />
+    <BlogPseudoLayout
+      showRecentPosts
+      tocElement={<TocOnSide content={post.content} />}
+    >
+      <div>
+        <PostEyecatch src={post.image?.url} id={post.id} />
 
-      <PostEyecatch src={post.image?.url} id={post.id} />
+        <PostMain
+          css={`
+            opacity: 1;
+            transition: opacity 0.5s 0.2s ease-out;
+            @starting-style {
+              opacity: 0;
+            }
+          `}
+        >
+          <PostHeader
+            updatedAt={post.updatedAt}
+            createdAt={post.publishedAt}
+            title={post.title}
+            tags={post.tags.map((tag) => tag.name)}
+          />
 
-      <PostMain
-        css={`
-          opacity: 1;
-          transition: opacity 0.5s 0.2s ease-out;
-          @starting-style {
-            opacity: 0;
-          }
-        `}
-      >
-        <PostHeader
-          updatedAt={post.updatedAt}
-          createdAt={post.publishedAt}
-          title={post.title}
-          tags={post.tags.map((tag) => tag.name)}
-        />
+          <SpColorModeSwitchWrapper>
+            <ColorModeSwitch />
+          </SpColorModeSwitchWrapper>
 
-        <SpColorModeSwitchWrapper>
-          <ColorModeSwitch />
-        </SpColorModeSwitchWrapper>
+          <PostContent>
+            <Toc content={post.content} />
+            <div>{parsedContent.result}</div>
+          </PostContent>
 
-        <PostContent>
-          <Toc content={post.content} />
-          <div>{parsedContent.result}</div>
-        </PostContent>
-
-        <PostFooterImage src={post.image?.url} />
-      </PostMain>
-      <div
-        css={`
-          padding: 16px;
-          padding-block-start: 32px;
-        `}
-      >
-        <PostAdjacency next={post.next} prev={post.prev} />
+          <PostFooterImage src={post.image?.url} />
+        </PostMain>
+        <div
+          css={`
+            padding: 16px;
+            padding-block-start: 32px;
+          `}
+        >
+          <PostAdjacency next={post.next} prev={post.prev} />
+        </div>
       </div>
-    </div>
+    </BlogPseudoLayout>
   );
 }

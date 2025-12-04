@@ -14,6 +14,7 @@ import { PostHeader } from "../_post-detail/post-header";
 import { PostFooterImage } from "../_post-detail/post-footer-image";
 import { PostEyecatch } from "../_post-detail/post-eyecatch";
 import { PostContent } from "../_post-detail/post-content";
+import { BlogPseudoLayout } from "../_blog-pseudo-layout";
 
 const fetchPost = (params: { slug: string; draftKey: string }) => {
   return microCmsRepository.getPreviewPost(params).catch(() => {
@@ -38,30 +39,35 @@ export default async function Page(props: PageProps<"/preview">) {
   const parsedContent = await bodyParser.process(post.content);
 
   return (
-    <div>
-      <TocOnSide content={post.content} />
+    <BlogPseudoLayout
+      showRecentPosts
+      tocElement={<TocOnSide content={post.content} />}
+    >
+      <div>
+        <TocOnSide content={post.content} />
 
-      <PostMain>
-        <PostEyecatch src={post.image?.url} id={slug} />
+        <PostMain>
+          <PostEyecatch src={post.image?.url} id={slug} />
 
-        <PostHeader
-          updatedAt={post.updatedAt}
-          createdAt={post.publishedAt}
-          title={post.title}
-          tags={post.tags.map((tag) => tag.name)}
-        />
+          <PostHeader
+            updatedAt={post.updatedAt}
+            createdAt={post.publishedAt}
+            title={post.title}
+            tags={post.tags.map((tag) => tag.name)}
+          />
 
-        <SpColorModeSwitchWrapper>
-          <ColorModeSwitch />
-        </SpColorModeSwitchWrapper>
+          <SpColorModeSwitchWrapper>
+            <ColorModeSwitch />
+          </SpColorModeSwitchWrapper>
 
-        <PostContent>
-          <Toc content={post.content} />
-          <div>{parsedContent.result}</div>
-        </PostContent>
+          <PostContent>
+            <Toc content={post.content} />
+            <div>{parsedContent.result}</div>
+          </PostContent>
 
-        <PostFooterImage src={post.image?.url} />
-      </PostMain>
-    </div>
+          <PostFooterImage src={post.image?.url} />
+        </PostMain>
+      </div>
+    </BlogPseudoLayout>
   );
 }
