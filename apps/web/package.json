@@ -15,7 +15,7 @@
     "@repo/style": "workspace:*",
     "@repo/ui": "workspace:*",
     "clsx": "^2.1.1",
-    "jotai": "^2.15.1",
+    "jotai": "^2.15.2",
     "next": "16.0.7",
     "next-query-utils": "^1.1.0",
     "react": "catalog:",
