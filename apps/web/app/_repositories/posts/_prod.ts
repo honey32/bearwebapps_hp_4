@@ -1,5 +1,6 @@
-import { microCmsContentsMock } from "./microCmsContentsMock";
-import { microCmsClient } from "./microCmsClient";
+import { microCmsClient } from "@/app/_http/microcms/client";
+
+export const TAG_MICROCMS_POSTS = "microcms-posts";
 
 type ISODatetimeString = string;
 
@@ -47,7 +48,7 @@ type ResponseTypes = {
   getSingleTag: Tag | undefined;
 };
 
-const prod_microCmsRepository = {
+export const prod_postsRepository = {
   getPosts: (
     options: { tagId?: string; orders?: string; limit?: number },
     init?: RequestInit,
@@ -61,7 +62,7 @@ const prod_microCmsRepository = {
       params.append("limit", options.limit.toFixed());
     }
 
-    return microCmsClient(`/posts?${params}`, init);
+    return microCmsClient(`/posts?${params}`, init, [TAG_MICROCMS_POSTS]);
   },
 
   // getPreviewPost は、本番環境では使わない。型のためにシグネチャ明示が必要なので unused-vars を無視する
@@ -81,6 +82,7 @@ const prod_microCmsRepository = {
     const posts: ResponseTypes["getPosts"] = await microCmsClient(
       "/posts?orders=-publishedAt",
       init,
+      [TAG_MICROCMS_POSTS],
     );
     const { contents } = posts;
     const index = contents.findIndex((record) => record.id === slug);
@@ -113,56 +115,9 @@ const prod_microCmsRepository = {
     const tags: ResponseTypes["getTags"] = await microCmsClient(
       `/tags?${params}`,
       init,
+      [TAG_MICROCMS_POSTS],
     );
 
     return tags.contents[0];
   },
 };
-
-const mock_microCmsRepository: typeof prod_microCmsRepository = {
-  getPosts: async () => {
-    const contents = microCmsContentsMock;
-    return { contents, offset: 0, limit: 10, totalCount: contents.length };
-  },
-
-  getPreviewPost: async (
-    { slug, draftKey }: { slug: string; draftKey: string },
-    init?: RequestInit,
-  ): Promise<Post> => {
-    const post: Promise<Post> = await microCmsClient(
-      `/posts/${slug}?draftKey=${draftKey}`,
-      init,
-    );
-    return post;
-  },
-
-  getSinglePost: async ({ slug }) => {
-    const contents = microCmsContentsMock;
-    const index = contents.findIndex((record) => record.id === slug);
-    if (index === -1) return undefined;
-
-    const post = contents[index]!;
-
-    const summerize = (entry: undefined | typeof post) => {
-      if (!entry) return undefined;
-      const { id, title } = entry;
-      return {
-        id,
-        title,
-      };
-    };
-    const prev = contents[index + 1];
-    const next = contents[index - 1];
-    return { ...post, prev: summerize(prev), next: summerize(next) };
-  },
-
-  getSingleTag: async ({ tagName }) => {
-    return { name: tagName, id: `TAG_${tagName}`, parent: undefined };
-  },
-};
-
-export const microCmsRepository =
-  process.env.NODE_ENV === "development" &&
-  process.env.FORCE_ENABLE_MICROCMS !== "true"
-    ? mock_microCmsRepository
-    : prod_microCmsRepository;

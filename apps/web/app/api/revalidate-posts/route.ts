@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import { revalidateTag } from "next/cache";
 
-import { TAG_MICROCMS_POSTS } from "@/app/_repositories/posts/microCmsClient";
+import { TAG_MICROCMS_POSTS } from "@/app/_repositories/posts";
 
 export const POST = async (request: Request) => {
   const { MICROCMS_WEBHOOK_SECRET } = process.env;

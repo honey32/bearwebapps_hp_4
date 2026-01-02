@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { getSingleQueryParam } from "next-query-utils";
 
-import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
+import { postsRepository } from "@/app/_repositories/posts";
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 
 import { BlogPseudoLayout } from "../_blog-pseudo-layout";
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 };
 
 const fetchTag = async ({ tagName }: { tagName: string }) => {
-  return await microCmsRepository.getSingleTag({ tagName });
+  return await postsRepository.getSingleTag({ tagName });
 };
 
 const fetchPosts = async (options: { tagId?: string }) => {
-  return await microCmsRepository.getPosts(options);
+  return await postsRepository.getPosts(options);
 };
 
 export default async function PostsIndexPage(props: PageProps<"/posts">) {

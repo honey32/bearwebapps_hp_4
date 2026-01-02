@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { microCmsRepository } from "./_repositories/posts/microCmsRepository";
+import { postsRepository } from "./_repositories/posts";
 
 const makeUrl: (s: string) => string = (() => {
   const withoutPrefix =
@@ -20,7 +20,7 @@ const makeUrl: (s: string) => string = (() => {
 type SitemapEntry = MetadataRoute.Sitemap[number];
 
 async function postsData(): Promise<SitemapEntry[]> {
-  const posts = await microCmsRepository.getPosts({});
+  const posts = await postsRepository.getPosts({});
 
   return posts.contents.map((post) => ({
     url: makeUrl(`/posts/${post.id}`),
