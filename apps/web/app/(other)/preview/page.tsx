@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getSingleQueryParam } from "next-query-utils";
 
 import { bodyParser } from "@repo/post/body-parser";
-import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
+import { postsRepository } from "@/app/_repositories/posts";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
 import { TocOnSide } from "../_post-detail/toc-on-side";
@@ -17,7 +17,7 @@ import { PostContent } from "../_post-detail/post-content";
 import { BlogPseudoLayout } from "../_blog-pseudo-layout";
 
 const fetchPost = (params: { slug: string; draftKey: string }) => {
-  return microCmsRepository.getPreviewPost(params).catch(() => {
+  return postsRepository.getPreviewPost(params).catch(() => {
     // プレビューデータ取得中のエラーは、notFound で隠す。
     notFound();
   });

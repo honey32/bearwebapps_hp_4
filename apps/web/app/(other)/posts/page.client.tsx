@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { Clock, Tag } from "tabler-icons-react";
 
-import { microCmsImageLoader } from "@/app/_repositories/posts/microCmsImageLoader";
+import { microCmsImageLoader } from "@/app/_http/microcms/image-loader";
 import { font_poppins } from "@/app/_common/fonts";
 import { isoStringToFormattedDateTime } from "@/app/_common/date-time-format";
 

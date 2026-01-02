@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
 import { bodyParser } from "@repo/post/body-parser";
-import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
+import { postsRepository } from "@/app/_repositories/posts";
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
 
@@ -22,12 +22,12 @@ type Params = {
 };
 
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
-  const posts = await microCmsRepository.getPosts({ limit: 100 });
+  const posts = await postsRepository.getPosts({ limit: 100 });
   return posts.contents.map((post) => ({ slug: post.id }));
 }
 
 const fetchPost = (params: Params) => {
-  return microCmsRepository.getSinglePost(params);
+  return postsRepository.getSinglePost(params);
 };
 
 export async function generateMetadata(

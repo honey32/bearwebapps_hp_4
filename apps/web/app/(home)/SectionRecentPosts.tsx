@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Clock } from "tabler-icons-react";
 
 import { styled } from "@repo/style/styled";
-import { microCmsRepository } from "@/app/_repositories/posts/microCmsRepository";
+import { postsRepository } from "@/app/_repositories/posts";
 import { font_poppins } from "@/app/_common/fonts";
 import { isoStringToFormattedDateTime } from "@/app/_common/date-time-format";
 
@@ -21,7 +21,7 @@ import {
   SectionPostTitle,
 } from "./_section-base";
 
-const fetchPosts = () => microCmsRepository.getPosts({ limit: 5 });
+const fetchPosts = () => postsRepository.getPosts({ limit: 5 });
 
 export const preload = () => {
   void fetchPosts();

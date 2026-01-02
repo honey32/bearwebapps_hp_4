@@ -3,7 +3,7 @@
 import { type FC } from "react";
 import Image from "next/image";
 
-import { microCmsImageLoader } from "@/app/_repositories/posts/microCmsImageLoader";
+import { microCmsImageLoader } from "@/app/_http/microcms/image-loader";
 
 type Props = {
   src?: string;
