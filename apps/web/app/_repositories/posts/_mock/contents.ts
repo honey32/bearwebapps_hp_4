@@ -61,7 +61,7 @@ Note 記法
   const a: ReactNode = (
     <div
 -     id="xabcd"
-      className={clsx(styles.aaa, font.className)}
+      className={styles.aaa}
 -     onClick={() => console.log("aaa")}
     >
 -     abcd
