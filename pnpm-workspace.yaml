@@ -1,14 +1,17 @@
 packages:
   - apps/*
   - packages/*
-onlyBuiltDependencies:
-  - core-js-pure
-  - sharp
+
 catalog:
+  "@types/node": ^25.0.10
+  "@types/react": ^19.2.10
+  "@types/react-dom": ^19.2.3
   eslint: ^9.39.2
   react: ^19.2.4
   react-dom: ^19.2.4
-  "@types/react": ^19.2.10
-  "@types/react-dom": ^19.2.3
-  "@types/node": ^25.0.10
   typescript: ^5.9.3
+
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - core-js-pure
+  - sharp
