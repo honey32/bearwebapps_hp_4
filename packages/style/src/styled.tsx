@@ -6,9 +6,8 @@ import {
   type FC,
 } from "react";
 
-import { clsx } from "clsx";
-
 import { processStyle } from "#_internal/process-style.ts";
+import { clsx2 } from "#_internal/clsx.ts";
 
 type TemplateFn<C> = (...templateArgs: Parameters<typeof String.raw>) => C;
 
@@ -27,7 +26,7 @@ export const styled = <C extends ElementType>(
         styleElem,
         createElement(Comp, {
           ...props,
-          className: clsx(className, props.className),
+          className: clsx2(className, props.className),
         }),
       );
     };

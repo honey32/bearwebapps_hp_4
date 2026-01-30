@@ -28,7 +28,6 @@
     "typescript": "catalog:"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
     "react": "catalog:",
     "react-dom": "catalog:"
   }

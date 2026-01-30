@@ -1,8 +1,7 @@
 import { createElement, Fragment, ReactNode } from "react";
 
-import { clsx } from "clsx";
-
 import { processStyle } from "#_internal/process-style.ts";
+import { clsx2 } from "#_internal/clsx.ts";
 
 const hasCssProp = (props: unknown): props is { css: string } => {
   return !!props && typeof props === "object" && "css" in props;
@@ -14,7 +13,7 @@ const withClassnameConcat = (
 ): typeof props => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { css, ...rest } = props;
-  return { ...rest, className: clsx(className, rest.className as string) };
+  return { ...rest, className: clsx2(className, rest.className as string) };
 };
 
 export const processCssForJsx = (
