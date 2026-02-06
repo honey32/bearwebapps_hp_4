@@ -54,8 +54,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       jotai:
-        specifier: ^2.17.0
-        version: 2.17.0(@babel/core@7.28.5)(@babel/template@7.27.2)(@types/react@19.2.10)(react@19.2.4)
+        specifier: ^2.17.1
+        version: 2.17.1(@babel/core@7.28.5)(@babel/template@7.27.2)(@types/react@19.2.10)(react@19.2.4)
       next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.28.5)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.94.2)
@@ -2866,8 +2866,8 @@ packages:
     resolution: {integrity: sha512-H0dkQoCa3b2VEeKQBOxFph+JAbcrQdE7KC0UkqwpLmv2EC4P41QXP+rqo9wYodACiG5/WM5s9oDApTU8utwj9g==}
     engines: {node: '>= 0.4'}
 
-  jotai@2.17.0:
-    resolution: {integrity: sha512-DBPT7Vx7E7R/ZJL7Uq7yUA9+LLR0IRiRM+Bw5ugVwv8L8++RjlXVXZ2//ccucypc5lcyuHOW09rYcW77RurduQ==}
+  jotai@2.17.1:
+    resolution: {integrity: sha512-TFNZZDa/0ewCLQyRC/Sq9crtixNj/Xdf/wmj9631xxMuKToVJZDbqcHIYN0OboH+7kh6P6tpIK7uKWClj86PKw==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@babel/core': '>=7.0.0'
@@ -6999,7 +6999,7 @@ snapshots:
       has-symbols: 1.1.0
       set-function-name: 2.0.2
 
-  jotai@2.17.0(@babel/core@7.28.5)(@babel/template@7.27.2)(@types/react@19.2.10)(react@19.2.4):
+  jotai@2.17.1(@babel/core@7.28.5)(@babel/template@7.27.2)(@types/react@19.2.10)(react@19.2.4):
     optionalDependencies:
       '@babel/core': 7.28.5
       '@babel/template': 7.27.2
