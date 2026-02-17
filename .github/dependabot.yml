@@ -34,6 +34,7 @@ updates:
         patterns:
           - "eslint"
           - "@eslint/js"
+          - "typescript-eslint"
       remark:
         update-types:
           - "patch"
