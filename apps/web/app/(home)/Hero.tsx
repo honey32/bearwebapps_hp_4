@@ -77,7 +77,8 @@ export default function Hero() {
           className={font_poppins.className}
           css={`
             display: flex;
-            gap: 0.5rem;
+            column-gap: 0.5rem;
+            flex-wrap: wrap;
           `}
         >
           <A href="https://github.com/honey32" target="_blank">
