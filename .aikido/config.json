@@ -1,0 +1,11 @@
+{
+  "npm": {
+    "minimumPackageAgeExclusions": [
+      "react",
+      "react-dom",
+      "next",
+      "@next/*",
+      "eslint-config-next"
+    ]
+  }
+}
