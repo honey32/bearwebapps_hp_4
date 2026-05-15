@@ -16,7 +16,7 @@
     "@repo/ui": "workspace:*",
     "jotai": "2.20.0",
     "next": "16.2.6",
-    "next-query-utils": "1.1.0",
+    "next-query-utils": "1.4.3",
     "react": "catalog:",
     "react-dom": "catalog:",
     "server-only": "0.0.1",
