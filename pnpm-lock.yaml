@@ -130,8 +130,8 @@ importers:
         specifier: 7.1.1
         version: 7.1.1(eslint@9.39.2)
       eslint-plugin-turbo:
-        specifier: 2.9.12
-        version: 2.9.12(eslint@9.39.2)(turbo@2.9.14)
+        specifier: 2.9.14
+        version: 2.9.14(eslint@9.39.2)(turbo@2.9.14)
       globals:
         specifier: 17.6.0
         version: 17.6.0
@@ -216,8 +216,8 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
       '@turbo/gen':
-        specifier: 2.9.12
-        version: 2.9.12(@types/node@25.8.0)
+        specifier: 2.9.14
+        version: 2.9.14(@types/node@25.8.0)
       '@types/node':
         specifier: 'catalog:'
         version: 25.8.0
@@ -258,8 +258,8 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
       '@turbo/gen':
-        specifier: 2.9.12
-        version: 2.9.12(@types/node@25.8.0)
+        specifier: 2.9.14
+        version: 2.9.14(@types/node@25.8.0)
       '@types/node':
         specifier: 'catalog:'
         version: 25.8.0
@@ -1769,8 +1769,8 @@ packages:
     cpu: [arm64]
     os: [darwin]
 
-  '@turbo/gen@2.9.12':
-    resolution: {integrity: sha512-p0lmM+9SR9hO8L+7ta13YAdOg4lQOkNKR5o+/jY6cqc/8FGDbPrwOT3+K1xd6LRSnXEdtRGFWPi8n7XOfPHHRw==}
+  '@turbo/gen@2.9.14':
+    resolution: {integrity: sha512-TkvUzfbJj2zB0WaybYd/hzADLqq97ru0OQCiQ1DDnul5spSTq5I8If21K3vUAjKIWAQbCjDqZIPrS1IPG5bLyA==}
     hasBin: true
 
   '@turbo/linux-64@2.9.14':
@@ -2528,8 +2528,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-turbo@2.9.12:
-    resolution: {integrity: sha512-Ilv1DTYyghdIdTUsW/VbjVTYKt1Hfs7X2C+rq/i4u7ZVofzcHZwk/3QwrV5UyOGADmxmWNyD+xcRS7+ZE5arQg==}
+  eslint-plugin-turbo@2.9.14:
+    resolution: {integrity: sha512-ROTlsO1JBJLATxtDNd7t22vviSb0hD8fKnjOO0WRgtxJW3VBRNO3BLAC129GPZSvEvtMH/f71Y2TzrqGPjLpEw==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -5237,7 +5237,7 @@ snapshots:
   '@turbo/darwin-arm64@2.9.14':
     optional: true
 
-  '@turbo/gen@2.9.12(@types/node@25.8.0)':
+  '@turbo/gen@2.9.14(@types/node@25.8.0)':
     dependencies:
       '@inquirer/prompts': 7.10.1(@types/node@25.8.0)
       esbuild: 0.25.12
@@ -6227,7 +6227,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-turbo@2.9.12(eslint@9.39.2)(turbo@2.9.14):
+  eslint-plugin-turbo@2.9.14(eslint@9.39.2)(turbo@2.9.14):
     dependencies:
       dotenv: 16.0.3
       eslint: 9.39.2
