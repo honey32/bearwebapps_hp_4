@@ -16,7 +16,7 @@
     "format:root": "prettier . --write"
   },
   "devDependencies": {
-    "prettier": "3.8.4",
+    "prettier": "3.9.4",
     "turbo": "2.10.2",
     "typescript": "catalog:"
   },
