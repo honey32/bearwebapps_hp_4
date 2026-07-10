@@ -27,7 +27,7 @@
     "typescript": "catalog:"
   },
   "dependencies": {
-    "radix-ui": "1.6.1",
+    "radix-ui": "1.6.2",
     "react": "catalog:",
     "react-dom": "catalog:"
   }
