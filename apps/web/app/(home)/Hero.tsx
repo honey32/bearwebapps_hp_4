@@ -84,8 +84,6 @@ export default function Hero() {
             column-rule-inset: 8px;
 
             ${mediaPc} {
-              column-gap: 0.5rem;
-              column-rule: none;
               justify-content: end;
             }
           `}
