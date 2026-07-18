@@ -80,8 +80,10 @@ export const GlobalHeader: FC = () => {
             ${pc} {
               padding: 0 0 16px;
               display: flex;
-              gap: 8px;
+              gap: 16px;
               font-weight: 300;
+              column-rule: 1px solid var(--color-border);
+              column-rule-inset: 6px;
 
               & > a:is(:link, :visited, :hover, :active) {
                 color: var(--color-text-secondary);
