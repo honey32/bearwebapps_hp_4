@@ -30,21 +30,20 @@ export default function Hero() {
     <section
       css={`
         ${container}
-        padding: 16px;
         background: var(--color-bg-card);
         border-radius: 8px;
 
         display: grid;
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 0px;
+        row-rule: 1px solid oklch(from var(--color-border) l c h / 0.5);
 
         ${mediaPc} {
           margin-block-start: 32px;
 
-          padding: 32px;
-
-          grid-template-columns: 320px 1fr;
-          gap: 32px;
+          grid-template-columns: 378px 1fr;
+          column-rule: 1px solid oklch(from var(--color-border) l c h / 0.5);
+          column-rule-inset: 24px;
         }
       `}
     >
@@ -53,12 +52,14 @@ export default function Hero() {
           margin-top: 0.5rem;
           display: flex;
           flex-direction: column;
+          padding: 16px;
 
           ${mediaPc} {
             place-self: center end;
             padding-block-end: 64px;
             text-align: end;
             place-items: end center;
+            padding: 32px;
           }
         `}
       >
@@ -77,8 +78,16 @@ export default function Hero() {
           className={font_poppins.className}
           css={`
             display: flex;
-            column-gap: 0.5rem;
+            column-gap: 1rem;
             flex-wrap: wrap;
+            column-rule: 2px solid oklch(from var(--color-border) l c h);
+            column-rule-inset: 8px;
+
+            ${mediaPc} {
+              column-gap: 0.5rem;
+              column-rule: none;
+              justify-content: end;
+            }
           `}
         >
           <A href="https://github.com/honey32" target="_blank">
@@ -101,6 +110,13 @@ export default function Hero() {
 
       <section
         css={`
+          padding: 16px;
+          margin-block: -0.5rem;
+
+          ${mediaPc} {
+            padding: 32px;
+          }
+
           p,
           ul {
             line-height: 1.5;
