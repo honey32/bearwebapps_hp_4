@@ -54,8 +54,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       jotai:
-        specifier: 2.20.2
-        version: 2.20.2(@babel/core@7.29.0)(@babel/template@7.28.6)(@types/react@19.2.18)(react@19.2.8)
+        specifier: 2.20.3
+        version: 2.20.3(@babel/core@7.29.0)(@babel/template@7.28.6)(@types/react@19.2.18)(react@19.2.8)
       next:
         specifier: 16.3.0
         version: 16.3.0(@babel/core@7.29.0)(@types/node@25.9.3)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(sass@1.94.2)
@@ -2964,8 +2964,8 @@ packages:
     resolution: {integrity: sha512-H0dkQoCa3b2VEeKQBOxFph+JAbcrQdE7KC0UkqwpLmv2EC4P41QXP+rqo9wYodACiG5/WM5s9oDApTU8utwj9g==}
     engines: {node: '>= 0.4'}
 
-  jotai@2.20.2:
-    resolution: {integrity: sha512-aHB4CNb9qRcyf0mwSB6EO5bCGAjx8cTwFgOFCE2leOnTzqACbnSWG8XoWB3LxCT1Qoj03I1OWAHszDmN4uHb/w==}
+  jotai@2.20.3:
+    resolution: {integrity: sha512-N8L9FUbeGDP+0qNJw1FebOxt+5hk+jTOwUA2LlRE4C081jUcY6F1T/FSETp4DT2/INMtiSRZyNm2D+yZdzrSgA==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@babel/core': '>=7.0.0'
@@ -3322,6 +3322,10 @@ packages:
 
   picomatch@4.0.5:
     resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
+    engines: {node: '>=12'}
+
+  picomatch@4.0.7:
+    resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
   possible-typed-array-names@1.1.0:
@@ -4520,7 +4524,7 @@ snapshots:
       detect-libc: 2.1.2
       is-glob: 4.0.3
       node-addon-api: 7.1.1
-      picomatch: 4.0.5
+      picomatch: 4.0.7
     optionalDependencies:
       '@parcel/watcher-android-arm64': 2.6.0
       '@parcel/watcher-darwin-arm64': 2.6.0
@@ -6792,7 +6796,7 @@ snapshots:
       has-symbols: 1.1.0
       set-function-name: 2.0.2
 
-  jotai@2.20.2(@babel/core@7.29.0)(@babel/template@7.28.6)(@types/react@19.2.18)(react@19.2.8):
+  jotai@2.20.3(@babel/core@7.29.0)(@babel/template@7.28.6)(@types/react@19.2.18)(react@19.2.8):
     optionalDependencies:
       '@babel/core': 7.29.0
       '@babel/template': 7.28.6
@@ -7298,6 +7302,9 @@ snapshots:
   picomatch@4.0.4: {}
 
   picomatch@4.0.5: {}
+
+  picomatch@4.0.7:
+    optional: true
 
   possible-typed-array-names@1.1.0: {}
 
