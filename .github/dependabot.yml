@@ -13,10 +13,11 @@ updates:
       day: "friday"
       time: "18:00"
       timezone: "Asia/Tokyo"
-    # Keep minor/patch only. Security updates are not affected by this ignore.
+    # Ignore major bumps for the eslint group only. Security updates are not
+    # affected by this ignore.
     #
-    # Why (esp. ESLint majors): Next.js + eslint-config-next is not ready for
-    # ESLint 10. See https://github.com/vercel/next.js/issues/89764
+    # Why: Next.js + eslint-config-next is not ready for ESLint 10.
+    # See https://github.com/vercel/next.js/issues/89764
     # - eslint-plugin-react (pulled in by eslint-config-next) still calls the
     #   removed context.getFilename() when settings.react.version is "detect",
     #   so rules like react/display-name crash with:
@@ -25,9 +26,13 @@ updates:
     #   scopeManager.addGlobals is not a function — Next's vendored
     #   @babel/eslint-parser predates ESLint 10's ScopeManager API, and Babel 7
     #   will not support ESLint 10 (needs Babel 8).
-    # Until upstream lands proper support, avoid Dependabot major bumps.
+    # Until upstream lands proper support, avoid Dependabot major bumps here.
     ignore:
-      - dependency-name: "*"
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@eslint/js"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript-eslint"
         update-types: ["version-update:semver-major"]
     groups:
       turbo:
