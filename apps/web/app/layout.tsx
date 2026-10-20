@@ -4,7 +4,7 @@ import { GlobalStyle } from "@repo/style/global-style";
 
 import { resetCss } from "./style-reset-css";
 import { colorSchemes } from "./style-color-scheme";
-import HTML from "./HTML";
+import { HTML } from "./HTML";
 import { sharedOpenGraphMetadata } from "./_common/shared-og-metadata";
 import { font_noto_sans_jp } from "./_common/fonts";
 

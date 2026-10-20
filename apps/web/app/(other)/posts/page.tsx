@@ -7,7 +7,7 @@ import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
 
 import { BlogPseudoLayout } from "../_blog-pseudo-layout";
 
-import PostsIndexPageClient from "./page.client";
+import { PostsIndexPageClient } from "./page.client";
 
 export const metadata: Metadata = {
   title: "投稿一覧",

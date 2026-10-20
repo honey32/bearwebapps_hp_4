@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import Image from "next/image";
 
 import { styled } from "@repo/style/styled";
@@ -25,7 +26,7 @@ const A = styled("a")`
   text-decoration: underline;
 `;
 
-export default function Hero() {
+export const Hero: FC = () => {
   return (
     <section
       css={`
@@ -134,4 +135,4 @@ export default function Hero() {
       </section>
     </section>
   );
-}
+};

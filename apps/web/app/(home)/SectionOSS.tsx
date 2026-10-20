@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { type FC, type ReactNode } from "react";
 
 import { ExternalLink } from "tabler-icons-react";
 
@@ -53,7 +53,7 @@ const libraries: Library[] = [
 
 const SectionArticleCard = SectionCardBase.as(HeadingLevel);
 
-export default function SectionOSS() {
+export const SectionOSS: FC = () => {
   return (
     <HeadingLevel
       as="section"
@@ -81,4 +81,4 @@ export default function SectionOSS() {
       ))}
     </HeadingLevel>
   );
-}
+};

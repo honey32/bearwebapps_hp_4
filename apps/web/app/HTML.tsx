@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentPropsWithoutRef } from "react";
+import type { ComponentPropsWithoutRef, FC } from "react";
 
 import { useAtomValue } from "jotai";
 
@@ -8,7 +8,7 @@ import { colorModeAtom } from "@/app/_colorMode/colorModeAtom";
 
 type Props = ComponentPropsWithoutRef<"html">;
 
-export default function HTML({ children, ...props }: Props) {
+export const HTML: FC<Props> = ({ children, ...props }) => {
   const theme = useAtomValue(colorModeAtom);
 
   return (
@@ -16,4 +16,4 @@ export default function HTML({ children, ...props }: Props) {
       {children}
     </html>
   );
-}
+};

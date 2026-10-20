@@ -1,6 +1,11 @@
 "use client";
 
-import { type MouseEventHandler, useCallback, ViewTransition } from "react";
+import {
+  type FC,
+  type MouseEventHandler,
+  useCallback,
+  ViewTransition,
+} from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -26,11 +31,7 @@ type Props = {
 
 const pc = `@media screen and (min-width: 960px)`;
 
-export default function PostsIndexPageClient({
-  tag,
-  summary,
-  contents,
-}: Props) {
+export const PostsIndexPageClient: FC<Props> = ({ tag, summary, contents }) => {
   const handleClickItem: MouseEventHandler = useCallback((event) => {
     // Link area delegation を実現するための、クリックイベント処理
     const target = event.target;
@@ -223,4 +224,4 @@ export default function PostsIndexPageClient({
       </div>
     </main>
   );
-}
+};

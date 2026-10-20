@@ -1,5 +1,7 @@
 "use client";
 
+import { type FC } from "react";
+
 import { ArrowsRightLeft, Moon, Sun } from "tabler-icons-react";
 import { useAtom } from "jotai";
 
@@ -8,7 +10,7 @@ import { styled } from "@repo/style/styled";
 
 import { colorModeAtom } from "./colorModeAtom";
 
-export default function ColorModeSwitch() {
+export const ColorModeSwitch: FC = () => {
   const [colorMode, setColorMode] = useAtom(colorModeAtom);
 
   const messages = {
@@ -53,7 +55,7 @@ export default function ColorModeSwitch() {
       <div>{"カラーモード: " + messages[colorMode]}</div>
     </Root>
   );
-}
+};
 
 const Root = styled("div")`
   display: inline-flex;

@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { bodyParser } from "@repo/post/body-parser";
 import { postsRepository } from "@/app/_repositories/posts";
 import { sharedOpenGraphMetadata } from "@/app/_common/shared-og-metadata";
-import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
+import { ColorModeSwitch } from "@/app/_colorMode/ColorModeSwitch";
 
 import { TocOnSide } from "../../_post-detail/toc-on-side";
 import { Toc } from "../../_post-detail/toc";

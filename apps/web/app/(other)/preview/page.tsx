@@ -4,7 +4,7 @@ import { getSingleQueryParam } from "next-query-utils";
 
 import { bodyParser } from "@repo/post/body-parser";
 import { postsRepository } from "@/app/_repositories/posts";
-import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
+import { ColorModeSwitch } from "@/app/_colorMode/ColorModeSwitch";
 
 import { TocOnSide } from "../_post-detail/toc-on-side";
 import { Toc } from "../_post-detail/toc";
