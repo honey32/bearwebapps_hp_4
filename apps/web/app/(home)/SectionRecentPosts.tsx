@@ -1,5 +1,6 @@
 import "server-only";
 
+import type { FC } from "react";
 import Link from "next/link";
 
 import { Clock } from "tabler-icons-react";
@@ -42,7 +43,7 @@ const SectionExerpt = styled(SectionPostDescription)`
   word-break: auto-phrase;
 `;
 
-export default async function SectionRecentPosts() {
+export const SectionRecentPosts: FC = async () => {
   const posts = await fetchPosts();
 
   return (
@@ -87,4 +88,4 @@ export default async function SectionRecentPosts() {
       ))}
     </SectionCard>
   );
-}
+};

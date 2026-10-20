@@ -1,3 +1,5 @@
+import type { FC } from "react";
+
 import { tocParser } from "@repo/post/toc-parser";
 
 type Props = {
@@ -12,7 +14,7 @@ type HeadingData = {
   };
 };
 
-export const Toc = async ({ content }: Props) => {
+export const Toc: FC<Props> = async ({ content }) => {
   const toc = await tocParser.process(content);
 
   const headings = toc.data.headings as HeadingData[];

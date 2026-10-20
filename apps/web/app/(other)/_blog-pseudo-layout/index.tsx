@@ -1,7 +1,7 @@
 import { Activity, FC, ReactNode, ViewTransition } from "react";
 
-import ColorModeSwitch from "@/app/_colorMode/ColorModeSwitch";
-import SectionRecentPosts from "@/app/(home)/SectionRecentPosts";
+import { ColorModeSwitch } from "@/app/_colorMode/ColorModeSwitch";
+import { SectionRecentPosts } from "@/app/(home)/SectionRecentPosts";
 
 import { ProfileCard } from "./profile-card";
 

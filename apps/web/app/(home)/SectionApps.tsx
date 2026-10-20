@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { type FC, type ReactNode } from "react";
 
 import { ExternalLink } from "tabler-icons-react";
 
@@ -40,7 +40,7 @@ const apps: ApplicationInfo[] = [
 
 const SectionArticleCard = SectionCardBase.as(HeadingLevel);
 
-export default function SectionApps() {
+export const SectionApps: FC = () => {
   return (
     <HeadingLevel
       as="section"
@@ -68,4 +68,4 @@ export default function SectionApps() {
       ))}
     </HeadingLevel>
   );
-}
+};

@@ -1,5 +1,7 @@
 import "server-only";
 
+import type { FC } from "react";
+
 import { ExternalLink, Heart, Folder, Clock } from "tabler-icons-react";
 
 import { font_poppins } from "@/app/_common/fonts";
@@ -50,7 +52,7 @@ export const preload = () => {
 
 const SectionCard = SectionCardBase.as(HeadingLevel);
 
-export default async function SectionQiita() {
+export const SectionQiita: FC = async () => {
   const posts = await fetchPosts();
   return (
     <SectionCard
@@ -104,4 +106,4 @@ export default async function SectionQiita() {
       ))}
     </SectionCard>
   );
-}
+};

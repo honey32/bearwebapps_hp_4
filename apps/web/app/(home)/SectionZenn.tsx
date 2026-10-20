@@ -1,5 +1,7 @@
 import "server-only";
 
+import type { FC } from "react";
+
 import { ExternalLink, Heart, Clock, MessageDots } from "tabler-icons-react";
 
 import { zennFetcher } from "@/app/_repositories/zenn/ZennClient";
@@ -34,7 +36,7 @@ export const preload = () => {
 
 const SectionCard = SectionCardBase.as(HeadingLevel);
 
-export default async function SectionZenn() {
+export const SectionZenn: FC = async () => {
   const posts = await fetchPosts();
 
   return (
@@ -93,4 +95,4 @@ export default async function SectionZenn() {
       ))}
     </SectionCard>
   );
-}
+};

@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef } from "react";
+import type { ComponentPropsWithRef, FC } from "react";
 
 export const dateTimeFormat = {
   default: new Intl.DateTimeFormat("ja-JP", {
@@ -20,10 +20,10 @@ type Props = TimeProps & {
   formatter?: Intl.DateTimeFormat;
 };
 
-export function Time({ dateTime, formatter, ...props }: Props) {
+export const Time: FC<Props> = ({ dateTime, formatter, ...props }) => {
   return (
     <time dateTime={dateTime} {...props}>
       {isoStringToFormattedDateTime(dateTime, formatter)}
     </time>
   );
-}
+};
