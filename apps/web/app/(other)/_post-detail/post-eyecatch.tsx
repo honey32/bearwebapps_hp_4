@@ -5,6 +5,7 @@ import { ViewTransition } from "react";
 import Image from "next/image";
 
 import { microCmsImageLoader } from "@/app/_http/microcms/image-loader";
+import { transitionNames } from "@/app/(other)/view-transition-names";
 
 type Props = {
   src?: string;
@@ -45,7 +46,7 @@ export const PostEyecatch: FC<Props> = ({ src, id }) => {
         }
       `}
     >
-      <ViewTransition name={`post-thumbnail-${id}`}>
+      <ViewTransition name={transitionNames.postThumbnail(id)}>
         <Image
           src={src}
           alt=""

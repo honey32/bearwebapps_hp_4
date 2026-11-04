@@ -14,6 +14,7 @@ import { Clock, Tag } from "tabler-icons-react";
 import { microCmsImageLoader } from "@/app/_http/microcms/image-loader";
 import { font_poppins } from "@/app/_common/fonts";
 import { isoStringToFormattedDateTime } from "@/app/_common/date-time-format";
+import { transitionNames } from "@/app/(other)/view-transition-names";
 
 type Props = {
   tag: { name: string } | undefined;
@@ -119,7 +120,7 @@ export const PostsIndexPageClient: FC<Props> = ({ tag, summary, contents }) => {
             `}
           >
             {post.image && (
-              <ViewTransition name={`post-thumbnail-${post.id}`}>
+              <ViewTransition name={transitionNames.postThumbnail(post.id)}>
                 <Image
                   className="backgroundImage"
                   sizes="(min-width: 960px) 800px, 100vw"
