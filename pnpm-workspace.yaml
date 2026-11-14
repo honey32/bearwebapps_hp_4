@@ -11,7 +11,11 @@ catalog:
   react-dom: 19.3.1
   typescript: 6.0.3
 
-onlyBuiltDependencies:
-  - "@parcel/watcher"
-  - core-js-pure
-  - sharp
+allowBuilds:
+  "@parcel/watcher": true
+  core-js-pure: true
+  esbuild: false
+  sharp: true
+
+saveExact: true
+savePrefix: ""

@@ -20,7 +20,7 @@ Bump **transitive** packages resolved in `pnpm-lock.yaml` while keeping direct d
 
 2. **Repository root** — `cd` to the monorepo root (where `pnpm-workspace.yaml` and `package.json` live).
 
-3. **Use project pnpm** — Match CI: enable Corepack if needed, then use the version from `packageManager` in root `package.json`.
+3. **Use project pnpm** — Match CI: enable Corepack if needed, then use the version from `devEngines.packageManager` in root `package.json` (resolved pin may also live in `pnpm-lock.yaml`).
 
 4. **Run update (no options)** — Execute exactly:
 
