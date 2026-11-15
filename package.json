@@ -24,6 +24,11 @@
     "node": ">=22"
   },
   "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.14.1",
+      "onFail": "download"
+    },
     "packageManager": {
       "name": "pnpm",
       "version": "12.21.0",
